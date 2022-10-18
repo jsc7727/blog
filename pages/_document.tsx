@@ -13,12 +13,12 @@ export default class MyDocument extends Document {
             <Script src="https://www.googletagmanager.com/gtag/js?id=70970QFS8R" strategy="afterInteractive" />
             <Script id="google-analytics" strategy="afterInteractive">
               {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){window.dataLayer.push(arguments);}
+                gtag('js', new Date());
 
-          gtag('config', '70970QFS8R');
-        `}
+                gtag('config','G-C5NHYCZNJK');
+              `}
             </Script>
           </div>
 
