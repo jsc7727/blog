@@ -2,18 +2,33 @@ import * as React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
 import createEmotionCache from '@assets/theme/createEmotionCache';
+import Script from 'next/script';
 
 export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
         <Head>
+          <div className="container">
+            <Script src="https://www.googletagmanager.com/gtag/js?id=70970QFS8R" strategy="afterInteractive" />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '70970QFS8R');
+        `}
+            </Script>
+          </div>
+
           {/* PWA primary color */}
           {/* <meta name="theme-color" content={'black'} /> */}
           {/* <link rel="shortcut icon" href="/favicon.ico" />
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
           <meta name="emotion-insertion-point" content="" />
           <meta name="description" content="jsc blog" /> */}
+
           <link
             rel="stylesheet"
             href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/default.min.css"

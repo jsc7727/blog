@@ -12,7 +12,7 @@ const Header = () => {
             opacity: 0.9;
           `}
         >
-          <Link href="/">TECH Series</Link>
+          <Link href="/">My First Programming</Link>
           <ThemeToggle></ThemeToggle>
         </Toolbar>
       </AppBar>

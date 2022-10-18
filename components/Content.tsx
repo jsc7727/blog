@@ -15,7 +15,7 @@ const Content = () => {
     <Box p={5} className="post__content">
       <Typography variant="h3">{post?.attributes?.title}</Typography>
       <Time date={post?.attributes.date as string} readTime={post?.attributes.readTime as string}></Time>
-      <Box dangerouslySetInnerHTML={{ __html: post?.content ?? '' }}></Box>
+      <Box maxWidth={'10'} justifyContent={'center'} dangerouslySetInnerHTML={{ __html: post?.content ?? '' }}></Box>
     </Box>
   );
 };
