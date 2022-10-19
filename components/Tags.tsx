@@ -8,7 +8,7 @@ const Tags: NextPage<{ tags: string[] }> = ({ tags }) => {
     <>
       {tags.map((tag: string) => {
         return (
-          <Link key={tag} href={`/tags/${tag}`} passHref>
+          <Link key={tag} href={`/tag/${tag}`} passHref>
             <Chip key={tag} label={tag} component="a" clickable />
           </Link>
         );

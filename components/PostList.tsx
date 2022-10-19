@@ -23,7 +23,7 @@ const PostList = ({ title, postList }: PostListProps) => {
               <Typography variant="h6">{e.description}</Typography>
               <Stack direction="row" justifyContent="flex-start" spacing={1}>
                 {e.tags.map((tag) => (
-                  <Link key={tag} href={`/tags/${tag}`} passHref>
+                  <Link key={tag} href={`/tag/${tag}`} passHref>
                     <Chip label={tag} component="a" clickable />
                   </Link>
                 ))}

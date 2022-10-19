@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { getAllFiles } from 'common/fs';
 import { AttributesType } from 'common/frontMatter';
 import PostList from '@components/PostList';
-import { getAllPostsOfCategory } from 'pages/api/getAllPostsOfCategory';
+import { getPostsByCategory } from '@pages/api/getPostsByCategory';
 
 type CategoryPageProps = {
   category: string;
@@ -25,7 +25,7 @@ export const getStaticPaths: GetStaticPaths = () => {
 
 export const getStaticProps: GetStaticProps = (context) => {
   const category = context.params?.category as string;
-  const postList = getAllPostsOfCategory(category);
+  const postList = getPostsByCategory(category);
   return {
     props: {
       category,
