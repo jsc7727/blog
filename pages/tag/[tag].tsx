@@ -16,7 +16,6 @@ const TagPage: NextPage<TagPageProps> = ({ tag, postList }) => {
 
 export const getStaticPaths: GetStaticPaths = () => {
   const paths = getAllTags().map((tag) => ({ params: { tag } }));
-  console.log(paths);
   return {
     paths,
     fallback: false,
@@ -26,7 +25,6 @@ export const getStaticPaths: GetStaticPaths = () => {
 export const getStaticProps: GetStaticProps = (context) => {
   const tag = context.params?.tag as string;
   const postList = getPostsByTag(tag);
-  console.log('TagPage', postList);
   return {
     props: {
       tag,
