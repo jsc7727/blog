@@ -10,8 +10,8 @@ const PostPage: NextPage = () => {
 };
 
 export const getStaticPaths: GetStaticPaths = () => {
-  const paths = getAllFiles().map(({ category, content }) => {
-    return { params: { category, slug: getAttributesOfContent(content)?.slug } };
+  const paths = getAllFiles().map(({ content }) => {
+    return { params: { slug: getAttributesOfContent(content)?.slug } };
   });
   return {
     paths,
@@ -21,12 +21,11 @@ export const getStaticPaths: GetStaticPaths = () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const slug = params?.slug as string;
-  const category = params?.category as string;
-  const post = await getPost(category, slug);
+  const post = await getPost(slug);
   return {
     props: {
       fallback: {
-        [unstable_serialize(['post', category, slug])]: post,
+        [unstable_serialize(['post', slug])]: post,
       },
     },
     revalidate: 6000,

@@ -19,7 +19,8 @@
       "@common/*": ["common/*"],
       "@assets/*": ["assets/*"],
       "@components/*": ["components/*"],
-      "@styles/*": ["styles/*"]
+      "@styles/*": ["styles/*"],
+      "@pages/*": ["pages/*"]
     },
     "jsxImportSource": "@emotion/react"
   },

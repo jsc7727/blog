@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: /
+Host: https://my-first-programming.kr
 
 # Sitemaps
-Sitemap: //sitemap.xml
+Sitemap: https://my-first-programming.kr/sitemap.xml

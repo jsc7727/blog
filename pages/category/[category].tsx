@@ -10,7 +10,7 @@ type CategoryPageProps = {
 };
 
 const CategoryPage: NextPage<CategoryPageProps> = ({ category, postList }) => {
-  return <PostList category={category} postList={postList}></PostList>;
+  return <PostList title={category} postList={postList}></PostList>;
 };
 
 export const getStaticPaths: GetStaticPaths = () => {

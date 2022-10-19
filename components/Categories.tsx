@@ -14,7 +14,7 @@ const Categories = ({ categories }: { categories: CategoryType }) => {
         {Object.entries(categories).map(([category, count]) => {
           return (
             <Grid key={category} item xs={6} md={3}>
-              <Link href={`/${category}`}>
+              <Link href={`/category/${category}`}>
                 <Card sx={{ maxWidth: 345 }}>
                   <CardActionArea>
                     <Image
