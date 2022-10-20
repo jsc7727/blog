@@ -1,5 +1,3 @@
-import { AttributesType } from '@common/frontMatter';
-import { FileType } from '@common/fs';
 import axios from 'axios';
 import useSWR from 'swr';
 
@@ -8,7 +6,7 @@ type useGetPostProps = {
   category: string;
 };
 
-const useGetPost = <T,>({ category, slug }: useGetPostProps) => {
+const useGetPost = <T>({ category, slug }: useGetPostProps) => {
   const { data, isValidating, error } = useSWR<T, Error>(
     ['post', category, slug],
     async () => {

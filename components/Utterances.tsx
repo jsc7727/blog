@@ -1,18 +1,13 @@
-const Utterances = () => (
-  <section
-    ref={(elem) => {
-      if (elem === null) return;
-      const scriptElem = document.createElement('script');
-      scriptElem.src = 'https://utteranc.es/client.js';
-      scriptElem.async = true;
-      scriptElem.setAttribute('repo', 'jsc7727/blog');
-      scriptElem.setAttribute('issue-term', 'pathname');
-      scriptElem.setAttribute('theme', 'github-light');
-      scriptElem.setAttribute('label', 'blog-comment');
-      scriptElem.crossOrigin = 'anonymous';
-      elem.appendChild(scriptElem);
-    }}
-  />
-);
+import { useUtterances } from 'hooks/useUtterances';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
+
+const Utterances = () => {
+  const [commentNodeId, setCommentNodeId] = useState('');
+  useEffect(() => setCommentNodeId('comments'), []);
+  const { resolvedTheme } = useTheme();
+  useUtterances(commentNodeId, resolvedTheme);
+  return <section id={commentNodeId}></section>;
+};
 
 export default Utterances;
