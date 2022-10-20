@@ -6,10 +6,10 @@ export type CategoryType = { [category: string]: number };
 
 const Categories = ({ categories }: { categories: CategoryType }) => {
   return (
-    <Box p={10}>
-      <Box pt={5} pb={5} fontSize={30}>
-        카테고리
-      </Box>
+    <Box p={2}>
+      <Typography p={2} variant="h2" component="h2">
+        {'category'}
+      </Typography>
       <Grid container justifyItems="center" spacing={3}>
         {Object.entries(categories).map(([category, count]) => {
           return (
