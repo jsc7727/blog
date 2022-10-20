@@ -13,10 +13,6 @@ tags:
 title: nextjs에서 sitemap을 적용하기
 ---
 
-- [next-sitemap](#next-sitemap)
-- [page/sitemap에 getServerSideProps 사용하여 구현](#pagesitemap에-getserversideprops-사용하여-구현)
-- [api로 구현](#api로-구현)
-
 # next-sitemap
 
 [🔗](https://www.npmjs.com/package/next-sitemap#installation)

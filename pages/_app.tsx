@@ -1,5 +1,5 @@
 import '../styles/globals.css';
-import { css, EmotionCache } from '@emotion/react';
+import { EmotionCache } from '@emotion/react';
 import '@common/axios';
 import createEmotionCache from '@assets/theme/createEmotionCache';
 import PageProvider from '@components/helpers/PageProvider';

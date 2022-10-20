@@ -1,9 +1,10 @@
 import { Chip } from '@mui/material';
-import { GetStaticProps, NextPage } from 'next';
-import { getAllTags } from '@pages/api/getAllTags';
+import { NextPage } from 'next';
 import Link from 'next/link';
 
-const Tags: NextPage<{ tags: string[] }> = ({ tags }) => {
+type TagsProps = { tags: string[] };
+
+const Tags: NextPage<TagsProps> = ({ tags }) => {
   return (
     <>
       {tags.map((tag: string) => {

@@ -1,5 +1,4 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import { getAllFiles } from '@common/fs';
 import { AttributesType } from '@common/frontMatter';
 import PostList from '@components/PostList';
 import { getPostsByTag } from '@pages/api/getPostsByTag';
@@ -25,12 +24,13 @@ export const getStaticPaths: GetStaticPaths = () => {
 export const getStaticProps: GetStaticProps = (context) => {
   const tag = context.params?.tag as string;
   const postList = getPostsByTag(tag);
+  console.log('tag', tag, postList.length);
   return {
     props: {
       tag,
       postList,
     },
-    revalidate: 6000,
+    // revalidate: 6000,
   };
 };
 export default TagPage;
