@@ -18,7 +18,7 @@ const Categories = ({ categories }: { categories: CategoryType }) => {
                 <Card sx={{ maxWidth: 345 }}>
                   <CardActionArea>
                     <Image
-                      src={`/images/categoryImage/${category}.jpg`}
+                      src={`/images/category/${category}.jpg`}
                       alt={category}
                       width={345}
                       height={200}

@@ -2,7 +2,7 @@
 categories:
   - css
 date: '2022-10-20'
-readTime: '10'
+readTime: '3'
 description: css line-clamp 를 이용한 초과 텍스트 자르기
 slug: line-clamp
 tags:
