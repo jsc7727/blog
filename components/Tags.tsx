@@ -1,4 +1,4 @@
-import { Box, Chip, css, Stack, Typography } from '@mui/material';
+import { Chip, css, Stack } from '@mui/material';
 import { NextPage } from 'next';
 import Link from 'next/link';
 
@@ -10,7 +10,6 @@ const Tags: NextPage<TagsProps> = ({ tags }) => {
       <Stack
         direction="row"
         justifyContent="flex-start"
-        // spacing={1}
         css={css`
           flex-wrap: wrap;
         `}

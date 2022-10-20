@@ -1,4 +1,4 @@
-import { Box, Chip, css, Stack, Typography } from '@mui/material';
+import { Box, css, Typography } from '@mui/material';
 import { AttributesType } from 'common/frontMatter';
 import Link from 'next/link';
 import Tags from './Tags';

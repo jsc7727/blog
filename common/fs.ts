@@ -22,7 +22,7 @@ type getAllFilesType = ReturnType<
 export const getAllFiles = (root = `./__posts`): getAllFilesType => {
   const result: getAllFilesType = [];
   try {
-    const files = fs.readdirSync(root, 'utf-8');
+    const files = fs.readdirSync(path.join(process.cwd(), root), 'utf-8');
     for (const filename of files) {
       const idDirectory = fs.lstatSync(root + '/' + filename).isDirectory();
       if (idDirectory === true) {
@@ -34,7 +34,7 @@ export const getAllFiles = (root = `./__posts`): getAllFilesType => {
             category,
             filename,
             path: root + '/' + filename,
-            content: fs.readFileSync(`${root}/${filename}`, 'utf-8'),
+            content: fs.readFileSync(path.join(process.cwd(), `${root}/${filename}`), 'utf-8'),
           });
         }
       }
