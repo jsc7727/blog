@@ -4,9 +4,15 @@ import { getAttributesOfContent } from 'common/frontMatter';
 import Content from '@components/Content';
 import { unstable_serialize } from 'swr';
 import { getPost } from 'pages/api/getPost';
+import Utterances from '@components/Utterances';
 
 const PostPage: NextPage = () => {
-  return <Content></Content>;
+  return (
+    <>
+      <Content></Content>
+      <Utterances></Utterances>
+    </>
+  );
 };
 
 export const getStaticPaths: GetStaticPaths = () => {
