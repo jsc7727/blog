@@ -1,6 +1,7 @@
 import { Box, Chip, css, Stack, Typography } from '@mui/material';
 import { AttributesType } from 'common/frontMatter';
 import Link from 'next/link';
+import Tags from './Tags';
 import Time from './Time';
 
 type PostListProps = {
@@ -32,13 +33,7 @@ const PostList = ({ title, postList }: PostListProps) => {
               >
                 {e.description}
               </Typography>
-              <Stack direction="row" justifyContent="flex-start" spacing={1}>
-                {e.tags.map((tag) => (
-                  <Link key={tag} href={`/tag/${tag}`} passHref>
-                    <Chip label={tag} component="a" clickable />
-                  </Link>
-                ))}
-              </Stack>
+              <Tags tags={e.tags}></Tags>
             </Box>
           </Link>
         );
