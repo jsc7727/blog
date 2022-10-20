@@ -12,7 +12,7 @@ type PostListProps = {
 const PostList = ({ title, postList }: PostListProps) => {
   return (
     <Box p={2}>
-      <Typography p={2} variant="h2" component="h2">
+      <Typography p={2} variant="h2" component="h1">
         {title}
       </Typography>
       {postList.map((e, idx) => {

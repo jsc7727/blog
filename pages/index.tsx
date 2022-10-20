@@ -7,7 +7,7 @@ import { getAllTags } from './api/getAllTags';
 import RecentPosts from '@components/RecentPosts';
 import { getAllPosts } from '@pages/api/getAllPosts';
 import { AttributesType } from '@common/frontMatter';
-import { Box, css, Stack, Typography } from '@mui/material';
+import { Box, Stack, Typography } from '@mui/material';
 
 type HomeProps = {
   tags: string[];
@@ -19,14 +19,14 @@ const Home: NextPage<HomeProps> = ({ tags, categories, postList }) => {
   return (
     <div className={styles.container}>
       <Box p={2}>
-        <Typography p={2} variant="h2" component="h2">
+        <Typography p={2} variant="h2" component="h1">
           {'Category'}
         </Typography>
         <Categories categories={categories}></Categories>
       </Box>
       <Stack sx={{ flexDirection: { xs: 'column', md: 'row-reverse' } }}>
         <Box p={2} sx={{ width: { md: '30%' } }}>
-          <Typography p={2} variant="h2" component="h2">
+          <Typography p={2} variant="h2" component="h1">
             {'Tags'}
           </Typography>
           <Tags tags={tags}></Tags>
