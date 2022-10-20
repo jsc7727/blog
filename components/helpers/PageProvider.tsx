@@ -16,9 +16,6 @@ interface PageProviderProps {
 const PageProvider: FC<PageProviderProps> = ({ children, emotionCache = clientSideEmotionCache }) => (
   <PreferredThemeProvider>
     <CacheProvider value={emotionCache}>
-      <Head>
-        <meta name="viewport" content="initial-scale=1, width=device-width" />
-      </Head>
       <MUIThemeProvider>{children}</MUIThemeProvider>
     </CacheProvider>
   </PreferredThemeProvider>

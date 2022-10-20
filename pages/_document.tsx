@@ -7,21 +7,11 @@ import Script from 'next/script';
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en">
+      <Html lang="kr">
         <Head>
-          <div className="container">
-            <Script src="https://www.googletagmanager.com/gtag/js?id=70970QFS8R" strategy="afterInteractive" />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){window.dataLayer.push(arguments);}
-                gtag('js', new Date());
-
-                gtag('config','G-C5NHYCZNJK');
-              `}
-            </Script>
-          </div>
-
+          <title>My First Programming For Our</title>
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          <meta name="description" content="IT TECH BLOG BY JUNIOR FRONT DEVELOPER" />
           {/* PWA primary color */}
           {/* <meta name="theme-color" content={'black'} /> */}
           {/* <link rel="shortcut icon" href="/favicon.ico" />
@@ -29,6 +19,8 @@ export default class MyDocument extends Document {
           <meta name="emotion-insertion-point" content="" />
           <meta name="description" content="jsc blog" /> */}
 
+          <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+          <link rel="icon" href="/favicon.ico" type="image/x-icon" />
           <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/default.min.css"
@@ -41,6 +33,16 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=70970QFS8R" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){window.dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config','G-C5NHYCZNJK');
+              `}
+        </Script>
       </Html>
     );
   }
