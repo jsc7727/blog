@@ -10,7 +10,14 @@ type TagPageProps = {
 };
 
 const TagPage: NextPage<TagPageProps> = ({ tag, postList }) => {
-  return <PostList title={tag} postList={postList}></PostList>;
+  return (
+    <>
+      <Head>
+        <title>{`'${tag}' 태그의 글 목록`}</title>
+      </Head>
+      <PostList title={tag} postList={postList}></PostList>;
+    </>
+  );
 };
 
 export const getStaticPaths: GetStaticPaths = () => {
