@@ -3,6 +3,7 @@ import { AttributesType } from '@common/frontMatter';
 import PostList from '@components/PostList';
 import { getPostsByTag } from '@pages/api/getPostsByTag';
 import { getAllTags } from '@pages/api/getAllTags';
+import Head from 'next/head';
 
 type TagPageProps = {
   tag: string;
