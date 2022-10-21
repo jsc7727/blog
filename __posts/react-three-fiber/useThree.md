@@ -51,8 +51,6 @@ function Foo() {
     const state = useThree()
 ```
 
-    The hook is reactive, if you resize the browser for instance, you get fresh measurements, same applies to any of the state objects that may change.
-
 useThree는 반응형입니다.
 만약 브라우저 창의 크기를 조정하면 새로 측정된 결과를 받으며,
 다른 모든 객체(scene, 카메라, ...)에도 동일하게 적용됩니다.
