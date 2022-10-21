@@ -1,6 +1,7 @@
 import { AttributesType } from '@common/frontMatter';
 import { FileType } from '@common/fs';
 import { Box, Typography } from '@mui/material';
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
 import Time from './Time';

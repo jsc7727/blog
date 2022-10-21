@@ -3,6 +3,7 @@ import { getAllFiles } from 'common/fs';
 import { AttributesType } from 'common/frontMatter';
 import PostList from '@components/PostList';
 import { getPostsByCategory } from '@pages/api/getPostsByCategory';
+import Head from 'next/head';
 
 type CategoryPageProps = {
   category: string;
@@ -10,7 +11,14 @@ type CategoryPageProps = {
 };
 
 const CategoryPage: NextPage<CategoryPageProps> = ({ category, postList }) => {
-  return <PostList title={category} postList={postList}></PostList>;
+  return (
+    <>
+      <Head>
+        <title>{`'${category}' 카테고리의 글 목록`}</title>
+      </Head>
+      <PostList title={category} postList={postList}></PostList>;
+    </>
+  );
 };
 
 export const getStaticPaths: GetStaticPaths = () => {

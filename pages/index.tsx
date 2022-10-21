@@ -8,6 +8,7 @@ import RecentPosts from '@components/RecentPosts';
 import { getAllPosts } from '@pages/api/getAllPosts';
 import { AttributesType } from '@common/frontMatter';
 import { Box, Stack, Typography } from '@mui/material';
+import Head from 'next/head';
 
 type HomeProps = {
   tags: string[];
@@ -18,6 +19,9 @@ type HomeProps = {
 const Home: NextPage<HomeProps> = ({ tags, categories, postList }) => {
   return (
     <div className={styles.container}>
+      <Head>
+        <title>{'Study For Programming'}</title>
+      </Head>
       <Box p={2}>
         <Typography p={2} variant="h2" component="h1">
           {'Category'}
