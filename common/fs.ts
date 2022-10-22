@@ -19,14 +19,28 @@ export const getFile = (filename: string): FileType => {
 type getAllFilesType = ReturnType<
   (root: string) => { category: string; filename: string; path: string; content: string }[]
 >;
-export const getAllFiles = (root = `./__posts`): getAllFilesType => {
+/**
+ * @param {string} root defalut "./__posts" , string type
+ */
+export const getAllFiles = (() => {
+  const dict: { [x: string]: getAllFilesType } = {};
+  return (root = `./__posts`) => {
+    if (Object.prototype.hasOwnProperty.call(dict, root)) {
+      return dict[root];
+    } else {
+      return (dict[root] = findPostsRecvFunction(root));
+    }
+  };
+})();
+
+const findPostsRecvFunction = (root = `./__posts`): getAllFilesType => {
   const result: getAllFilesType = [];
   try {
     const files = fs.readdirSync(path.join(process.cwd(), root), 'utf-8');
     for (const filename of files) {
       const idDirectory = fs.lstatSync(root + '/' + filename).isDirectory();
       if (idDirectory === true) {
-        result.push(...getAllFiles(root + '/' + filename));
+        result.push(...findPostsRecvFunction(root + '/' + filename));
       } else {
         const category = root.split('/').at(-1);
         if (category !== undefined) {
