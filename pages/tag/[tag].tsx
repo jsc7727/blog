@@ -32,7 +32,6 @@ export const getStaticPaths: GetStaticPaths = () => {
 export const getStaticProps: GetStaticProps = (context) => {
   const tag = context.params?.tag as string;
   const postList = getPostsByTag(tag);
-  console.log('tag', tag, postList.length);
   return {
     props: {
       tag,
