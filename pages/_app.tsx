@@ -7,6 +7,8 @@ import Header from '@components/Header';
 import { SWRConfig } from 'swr';
 import type { AppProps } from 'next/app';
 import { PostType } from '@components/Content';
+import Head from 'next/head';
+import CssBaseline from '@mui/material/CssBaseline';
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -18,7 +20,11 @@ interface MyAppProps extends AppProps<{ fallback: fallbackType }> {
 function MyApp({ Component, pageProps, emotionCache = clientSideEmotionCache }: MyAppProps) {
   return (
     <>
+      <Head>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <PageProvider emotionCache={emotionCache}>
+        <CssBaseline />
         <Header></Header>
         <SWRConfig value={{ fallback: pageProps.fallback }}>
           <Component {...pageProps} />

@@ -29,4 +29,4 @@ title: stale-while-revalidate
 
 다음은 위 글을 표로 정리한 것입니다.
 
-![stale-while-revalidate1](/images/stale-while-revalidate1.png)
+![stale-while-revalidate1](/images/post/stale-while-revalidate1.png)

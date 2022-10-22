@@ -1,5 +1,9 @@
 html,
 body {
+  /* object-fit: scale-down;
+  background-image: url('/images/background/night-sky.jpg'); */
+  /* max-width: 900px;
+  margin: 0 auto; */
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
