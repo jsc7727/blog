@@ -4,7 +4,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 
 const getPostsBySearchQuery = (searchQuery: string) => {
   const allFiles = getAllFiles();
-  const Regex = new RegExp(`${searchQuery}`);
+  const Regex = new RegExp(`${searchQuery}`, 'i');
   return allFiles
     .map((e) => getAttributesOfContent(e.content))
     .filter((e) => {
