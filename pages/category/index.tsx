@@ -13,7 +13,7 @@ const CategoryMain: NextPage<CategoryMainProps> = ({ categories }) => {
       <Head>
         <title>{'카테고리 목록'}</title>
       </Head>
-      <Categories categories={categories}></Categories>;
+      <Categories categories={categories}></Categories>
     </>
   );
 };

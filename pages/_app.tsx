@@ -26,6 +26,7 @@ function MyApp({ Component, pageProps, emotionCache = clientSideEmotionCache }: 
       <PageProvider emotionCache={emotionCache}>
         <CssBaseline />
         <Header></Header>
+        <div id="portal" />
         <SWRConfig value={{ fallback: pageProps.fallback }}>
           <Component {...pageProps} />
         </SWRConfig>

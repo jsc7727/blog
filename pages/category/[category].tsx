@@ -16,7 +16,7 @@ const CategoryPage: NextPage<CategoryPageProps> = ({ category, postList }) => {
       <Head>
         <title>{`'${category}' 카테고리의 글 목록`}</title>
       </Head>
-      <PostList title={category} postList={postList}></PostList>;
+      <PostList title={category} postList={postList}></PostList>
     </>
   );
 };

@@ -1,6 +1,10 @@
-import { AppBar, css, Toolbar } from '@mui/material';
+import { AppBar, css, Stack, Toolbar } from '@mui/material';
 import Link from 'next/link';
 import ThemeToggle from './ThemeToggle';
+import Search from '@components/Search';
+import useGetPostsBySearchQuery from 'hooks/SWR/useGetPostsBySearchQuery';
+import { AttributesType } from '@common/frontMatter';
+import useSWR from 'swr';
 
 const Header = () => {
   return (
@@ -13,7 +17,10 @@ const Header = () => {
           `}
         >
           <Link href="/">My First Programming</Link>
-          <ThemeToggle></ThemeToggle>
+          <Stack direction="row" spacing={3}>
+            <Search></Search>
+            <ThemeToggle></ThemeToggle>
+          </Stack>
         </Toolbar>
       </AppBar>
       <Toolbar />
