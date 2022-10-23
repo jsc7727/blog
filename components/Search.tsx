@@ -87,7 +87,7 @@ const SearchComponents = () => {
           inputProps={{ 'aria-label': 'search' }}
         />
       </Search>
-      <Portal selector="#portal">
+      {/* <Portal selector="#portal">
         <div
           css={css`
             background: black;
@@ -105,7 +105,7 @@ const SearchComponents = () => {
               })}
           </div>
         </div>
-      </Portal>
+      </Portal> */}
     </>
   );
 };
