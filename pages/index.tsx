@@ -23,14 +23,34 @@ const Home: NextPage<HomeProps> = ({ tags, categories, postList }) => {
         <title>{'Study For Programming'}</title>
       </Head>
       <Box p={2}>
-        <Typography p={2} variant="h2" component="h1">
+        <Typography
+          p={2}
+          variant="h2"
+          component="h1"
+          sx={{
+            fontFamily: 'Miwon',
+            background: '-webkit-linear-gradient(45deg, #ff4b22  10%, #fcbc19 90%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}
+        >
           {'Category'}
         </Typography>
         <Categories categories={categories}></Categories>
       </Box>
       <Stack sx={{ flexDirection: { xs: 'column', md: 'row-reverse' } }}>
         <Box p={2} sx={{ width: { md: '30%' } }}>
-          <Typography p={2} variant="h2" component="h1">
+          <Typography
+            p={2}
+            variant="h2"
+            component="h1"
+            sx={{
+              fontFamily: 'Miwon',
+              background: '-webkit-linear-gradient(45deg, #ff4b22 10%, #fcbc19 90%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}
+          >
             {'Tags'}
           </Typography>
           <Tags tags={tags}></Tags>

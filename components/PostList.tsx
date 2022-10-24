@@ -1,4 +1,4 @@
-import { Box, css, Typography } from '@mui/material';
+import { Box, css, Paper, Typography } from '@mui/material';
 import { AttributesType } from 'common/frontMatter';
 import Link from 'next/link';
 import Tags from './Tags';
@@ -12,13 +12,35 @@ type PostListProps = {
 const PostList = ({ title, postList }: PostListProps) => {
   return (
     <Box p={2}>
-      <Typography p={2} variant="h2" component="h1">
+      <Typography
+        p={2}
+        variant="h2"
+        component="h1"
+        sx={{
+          fontFamily: 'Miwon',
+          background: '-webkit-linear-gradient(45deg, #ff4b22 30%, #fcbc19 90%)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+        }}
+      >
         {title}
       </Typography>
       {postList.map((e, idx) => {
         return (
           <Link key={idx} href={`/post/${e.slug}`} passHref>
-            <Box p={2} mt={2} mb={2} sx={{ border: 1, borderRadius: '15px' }}>
+            <Box
+              p={2}
+              mt={2}
+              mb={2}
+              sx={{ border: 1, borderRadius: '15px' }}
+              css={css`
+                &:hover {
+                  transition-duration: 0.15s;
+                  transform: translate(-5px, -3px);
+                }
+              `}
+              boxShadow={5}
+            >
               <Typography variant="h4">{`${e.title}`}</Typography>
               <Time date={e.date} readTime={e.readTime}></Time>
               <Typography

@@ -12,8 +12,6 @@ export default class MyDocument extends Document {
           <meta name="description" content="IT TECH BLOG BY JUNIOR FRONT DEVELOPER" />
           {/* PWA primary color */}
           {/* <meta name="theme-color" content={'black'} /> */}
-          {/* <link rel="shortcut icon" href="/favicon.ico" />
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />*/}
 
           <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
           <link rel="icon" href="/favicon.ico" type="image/x-icon" />
@@ -21,8 +19,7 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/default.min.css"
           />
-          <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+          {/* <link rel="stylesheet" href="/fonts/font.css" /> */}
           {(this.props as any).emotionStyleTags}
         </Head>
         <body>

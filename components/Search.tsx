@@ -1,4 +1,4 @@
-import { alpha, css, InputBase, styled } from '@mui/material';
+import { alpha, Box, css, InputBase, styled } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import { useEffect, useMemo, useState } from 'react';
 import useGetPostsBySearchQuery from 'hooks/SWR/useGetPostsBySearchQuery';
@@ -8,6 +8,7 @@ import Portal from './Portal';
 import axios from 'axios';
 import useSWRImmutable from 'swr/immutable';
 import { debounce } from 'lodash';
+import { useTheme } from 'next-themes';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -51,28 +52,32 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
+const StyledBox = styled(Box)(({ theme }) => ({
+  // background: `-webkit-linear-gradient(-90deg, #09009f, #00ff95 80%)`,
+  font: 'bold 120px Poppins, sans-serif',
+  backgroundImage: 'linear-gradient(60deg, #E21143, #FFB03A)',
+  WebkitBackgroundClip: 'text',
+  WebkitTextFillColor: 'transparent',
+  // display: 'flex',
+  // justifyContent: 'center',
+}));
+
 const SearchComponents = () => {
+  const { resolvedTheme, theme } = useTheme();
+
   const [searchQuery, setSearchQuery] = useState<string>('');
   const { mutate } = useSWRConfig();
-  const { data: searchList, fetch } = useGetPostsBySearchQuery<AttributesType[]>(searchQuery);
-  //   const { data: searchList } = useSWR<AttributesType[]>(['getPostsBySearchQuery']);
+  const { data: searchList } = useGetPostsBySearchQuery<AttributesType[]>(searchQuery);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const debouncedSearch = useMemo(
     () =>
       debounce((searchQuery: string) => {
         setSearchQuery(searchQuery);
-        mutate(['getPostsBySearchQuery', searchQuery], fetch(searchQuery), { revalidate: false });
+        mutate(['getPostsBySearchQuery', searchQuery]);
       }, 500),
-    [],
+    [mutate],
   );
-
-  //   useEffect(() => {
-  //     const delayDebounceFn = setTimeout(async () => {
-  //       //   mutate(['getPostsBySearchQuery', searchQuery], fetch(searchQuery), { revalidate: false });
-  //       setSearchQuery(changeString);
-  //     }, 1000);
-  //     return () => clearTimeout(delayDebounceFn);
-  //   }, [changeString]);
 
   return (
     <>
@@ -83,29 +88,57 @@ const SearchComponents = () => {
         <StyledInputBase
           //   onChange={(e) => setChangeString(e.target.value)}
           onChange={(e) => debouncedSearch(e.target.value)}
+          onFocus={() => setIsOpen(true)}
           placeholder="Search…"
           inputProps={{ 'aria-label': 'search' }}
         />
       </Search>
-      {/* <Portal selector="#portal">
-        <div
-          css={css`
-            background: black;
-            width: 1000px;
-            height: 1000px;
-            position: absolute;
-            z-index: 1000; ;
-          `}
-        >
-          <div>
-            {searchList !== undefined &&
-              Array.isArray(searchList) &&
-              searchList.map((v, idx) => {
-                return <div key={v.slug + idx}>{v.slug}</div>;
-              })}
-          </div>
-        </div>
-      </Portal> */}
+      <Portal selector="#portal">
+        <>
+          {isOpen && (
+            <div
+              onClick={() => setIsOpen(false)}
+              css={css`
+                position: fixed;
+                top: 64px;
+                height: 100%;
+                width: 100%;
+                backdrop-filter: blur(10px);
+                z-index: 10;
+              `}
+              // css={css`
+              //   /* background: rga(#ffffff, 0.5); */
+              //   background: black;
+              //   width: 100%;
+              //   height: 100%;
+              //   opacity: 0.8;
+              //   position: absolute;
+              //   z-index: 1000; ;
+              // `}
+            >
+              <div>
+                {searchList !== undefined &&
+                  Array.isArray(searchList) &&
+                  searchList.map((v, idx) => {
+                    return (
+                      <StyledBox
+                        // sx={{ bgcolor: 'secondary.main' }}
+                        key={v.slug + idx}
+                        // css={css`
+                        //   z-index: 20;
+                        //   margin: 50px;
+                        //   width: inherit;
+                        // `}
+                      >
+                        {v.slug}
+                      </StyledBox>
+                    );
+                  })}
+              </div>
+            </div>
+          )}
+        </>
+      </Portal>
     </>
   );
 };

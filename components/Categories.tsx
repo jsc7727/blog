@@ -16,7 +16,21 @@ const Categories = ({ categories }: { categories: CategoryType }) => {
         return (
           <Grid key={category} item xs={12} sm={6} md={4} lg={3} xl={2} sx={{ flexBasis: { xs: 'auto' } }}>
             <Link href={`/category/${category}`}>
-              <Card sx={{ maxWidth: 345 }}>
+              <Card
+                sx={{
+                  maxWidth: 345,
+                  ':hover': {
+                    boxShadow: 6,
+                  },
+                }}
+                elevation={5}
+                css={css`
+                  &:hover {
+                    transition-duration: 0.3s;
+                    transform: translate(-5px, -3px);
+                  }
+                `}
+              >
                 <CardActionArea>
                   <Image
                     src={`/images/category/${category}.jpg`}
@@ -37,7 +51,17 @@ const Categories = ({ categories }: { categories: CategoryType }) => {
                       gap: 10px;
                     `}
                   >
-                    <Typography variant="h5" component="div" align="center">
+                    <Typography
+                      variant="h5"
+                      component="div"
+                      align="center"
+                      sx={{
+                        fontFamily: 'Miwon',
+                        background: '-webkit-linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                      }}
+                    >
                       {category}
                     </Typography>
                     <Chip label={count} size="small" />

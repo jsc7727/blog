@@ -11,11 +11,7 @@ const fetch = async (searchQuery: string) => {
 function useGetPostsBySearchQuery<T>(searchQuery: string) {
   const { data, isValidating, error } = useSWRImmutable<T, Error>(
     ['getPostsBySearchQuery', searchQuery],
-    // async () => await fetch(searchQuery),
-    // async () =>{
-    //   await setTimeout(async () => {}, 1000),
-    //   return await fetch(searchQuery);
-    // }
+    async () => await fetch(searchQuery),
   );
   // { revalidateOnMount: false, revalidateIfStale: false, revalidateOnReconnect: false },
 

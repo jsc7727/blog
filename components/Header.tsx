@@ -1,4 +1,4 @@
-import { AppBar, css, Stack, Toolbar } from '@mui/material';
+import { AppBar, css, Stack, Toolbar, Typography } from '@mui/material';
 import Link from 'next/link';
 import ThemeToggle from './ThemeToggle';
 import Search from '@components/Search';
@@ -16,7 +16,18 @@ const Header = () => {
             opacity: 0.9;
           `}
         >
-          <Link href="/">My First Programming</Link>
+          <Link href="/">
+            <Typography
+              sx={{
+                fontFamily: 'Miwon',
+                background: '-webkit-linear-gradient(45deg, #ff4b22 30%, #FF8E53 90%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
+              {' My First Programming'}
+            </Typography>
+          </Link>
           <Stack direction="row" spacing={3}>
             <Search></Search>
             <ThemeToggle></ThemeToggle>

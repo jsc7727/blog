@@ -1,5 +1,5 @@
 import '../styles/globals.css';
-import { EmotionCache } from '@emotion/react';
+import { css, EmotionCache } from '@emotion/react';
 import '@common/axios';
 import createEmotionCache from '@assets/theme/createEmotionCache';
 import PageProvider from '@components/helpers/PageProvider';
@@ -20,13 +20,13 @@ interface MyAppProps extends AppProps<{ fallback: fallbackType }> {
 function MyApp({ Component, pageProps, emotionCache = clientSideEmotionCache }: MyAppProps) {
   return (
     <>
+      <div id="portal" />
       <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <PageProvider emotionCache={emotionCache}>
         <CssBaseline />
         <Header></Header>
-        <div id="portal" />
         <SWRConfig value={{ fallback: pageProps.fallback }}>
           <Component {...pageProps} />
         </SWRConfig>
