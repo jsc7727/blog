@@ -1,4 +1,4 @@
-import { alpha, Box, css, InputBase, styled } from '@mui/material';
+import { alpha, Box, css, InputBase, Stack, styled, Typography } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import { useEffect, useMemo, useState } from 'react';
 import useGetPostsBySearchQuery from 'hooks/SWR/useGetPostsBySearchQuery';
@@ -9,6 +9,7 @@ import axios from 'axios';
 import useSWRImmutable from 'swr/immutable';
 import { debounce } from 'lodash';
 import { useTheme } from 'next-themes';
+import Link from 'next/link';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -53,8 +54,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const StyledBox = styled(Box)(({ theme }) => ({
-  // background: `-webkit-linear-gradient(-90deg, #09009f, #00ff95 80%)`,
-  font: 'bold 120px Poppins, sans-serif',
+  font: 'bold 30px Miwon',
   backgroundImage: 'linear-gradient(60deg, #E21143, #FFB03A)',
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
@@ -103,38 +103,38 @@ const SearchComponents = () => {
                 top: 64px;
                 height: 100%;
                 width: 100%;
-                backdrop-filter: blur(10px);
+                backdrop-filter: blur(15px) brightness(25%);
+                /* backdrop-filter: opacity(80%); */
+
                 z-index: 10;
               `}
-              // css={css`
-              //   /* background: rga(#ffffff, 0.5); */
-              //   background: black;
-              //   width: 100%;
-              //   height: 100%;
-              //   opacity: 0.8;
-              //   position: absolute;
-              //   z-index: 1000; ;
-              // `}
             >
-              <div>
+              <Box m={5}>
                 {searchList !== undefined &&
                   Array.isArray(searchList) &&
                   searchList.map((v, idx) => {
                     return (
-                      <StyledBox
-                        // sx={{ bgcolor: 'secondary.main' }}
-                        key={v.slug + idx}
-                        // css={css`
-                        //   z-index: 20;
-                        //   margin: 50px;
-                        //   width: inherit;
-                        // `}
-                      >
-                        {v.slug}
-                      </StyledBox>
+                      <Link key={v.slug + idx} href={`/post/${v.slug}`}>
+                        <Stack
+                          // sx={{ bgcolor: 'secondary.main' }}
+                          key={v.slug + idx}
+                          m={3}
+                          direction="row"
+                          gap={3}
+                          css={css`
+                            &:hover {
+                              cursor: pointer;
+                            }
+                          `}
+                        >
+                          <Typography>{v.categories}</Typography>
+                          <Typography>{v.title}</Typography>
+                          <Typography>{v.date}</Typography>
+                        </Stack>
+                      </Link>
                     );
                   })}
-              </div>
+              </Box>
             </div>
           )}
         </>
