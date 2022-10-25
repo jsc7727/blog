@@ -1,4 +1,4 @@
-import { alpha, Box, css, InputBase, Stack, styled, Typography } from '@mui/material';
+import { alpha, Box, Card, css, InputBase, Stack, styled, Typography } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import { useEffect, useMemo, useState } from 'react';
 import useGetPostsBySearchQuery from 'hooks/SWR/useGetPostsBySearchQuery';
@@ -47,7 +47,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     [theme.breakpoints.up('sm')]: {
       width: '12ch',
       '&:focus': {
-        width: '20ch',
+        width: '25ch',
       },
     },
   },
@@ -115,22 +115,25 @@ const SearchComponents = () => {
                   searchList.map((v, idx) => {
                     return (
                       <Link key={v.slug + idx} href={`/post/${v.slug}`}>
-                        <Stack
-                          // sx={{ bgcolor: 'secondary.main' }}
-                          key={v.slug + idx}
-                          m={3}
-                          direction="row"
-                          gap={3}
-                          css={css`
-                            &:hover {
-                              cursor: pointer;
-                            }
-                          `}
-                        >
-                          <Typography>{v.categories}</Typography>
-                          <Typography>{v.title}</Typography>
-                          <Typography>{v.date}</Typography>
-                        </Stack>
+                        <Card sx={{ background: 'white' }}>
+                          <Stack
+                            // sx={{ bgcolor: 'secondary.main' }}
+                            key={v.slug + idx}
+                            m={3}
+                            direction="row"
+                            gap={3}
+                            css={css`
+                              &:hover {
+                                cursor: pointer;
+                              }
+                            `}
+                          >
+                            <Typography>{v.categories}</Typography>
+                            <Typography>{v.title}</Typography>
+
+                            <Typography>{v.date}</Typography>
+                          </Stack>
+                        </Card>
                       </Link>
                     );
                   })}

@@ -37,6 +37,7 @@ export const globalStyles = css`
         format: ('woff2');
         font-display: swap;
       }
+      user-select: none;
       background-color: #fff;
       color: #121212;
     }

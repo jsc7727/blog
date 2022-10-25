@@ -35,6 +35,7 @@ const PostList = ({ title, postList }: PostListProps) => {
               sx={{ border: 1, borderRadius: '15px' }}
               css={css`
                 &:hover {
+                  cursor: pointer;
                   transition-duration: 0.15s;
                   transform: translate(-5px, -3px);
                 }

@@ -16,7 +16,7 @@ const TagPage: NextPage<TagPageProps> = ({ tag, postList }) => {
       <Head>
         <title>{`'${tag}' 태그의 글 목록`}</title>
       </Head>
-      <PostList title={tag} postList={postList}></PostList>;
+      <PostList title={tag} postList={postList}></PostList>
     </>
   );
 };

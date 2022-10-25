@@ -10,19 +10,38 @@ const ThemeToggle = () => {
   // When mounted on client, now we can show the UI
   useEffect(() => setMounted(true), []);
 
-  if (!mounted) return <div></div>;
+  const onClickHandler = () => {
+    setTheme(resolvedTheme === 'light' ? 'dark' : 'light');
+  };
 
+  if (!mounted) return <div></div>;
   return (
-    <Button
+    <div
       css={css`
-        background: linear-gradient(to top right, #2a48f3 0%, #c32cc2 100%);
+        transition-duration: 1s;
       `}
-      variant="contained"
-      endIcon={resolvedTheme === 'light' ? <DarkModeIcon /> : <LightModeIcon />}
-      onClick={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}
     >
-      {resolvedTheme === 'light' ? 'dark' : 'light'}
-    </Button>
+      {/* <Button
+        css={css`
+          background: linear-gradient(to top right, #2a48f3 0%, #c32cc2 100%);
+          background: linear-gradient(to top right, #f83f15 30%, #f4b109 90%);
+          border-radius: 100%;
+          & > span {
+            margin: 0;
+          }
+        `}
+        variant="contained"
+        endIcon={resolvedTheme === 'light' ? <DarkModeIcon /> : <LightModeIcon />}
+        onClick={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}
+      >
+        {resolvedTheme === 'light' ? 'dark' : 'light'}
+      </Button> */}
+      {resolvedTheme === 'light' ? (
+        <DarkModeIcon onClick={onClickHandler} />
+      ) : (
+        <LightModeIcon onClick={onClickHandler} />
+      )}
+    </div>
   );
 };
 export default ThemeToggle;
