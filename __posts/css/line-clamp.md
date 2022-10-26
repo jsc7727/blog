@@ -10,6 +10,7 @@ tags:
   - line-clamp
   - mdn
 title: line-clamp
+posted: true
 ---
 
 # line-clamp 이란?

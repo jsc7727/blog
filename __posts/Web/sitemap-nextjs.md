@@ -11,6 +11,7 @@ tags:
   - SEO
   - nextjs
 title: nextjs에서 sitemap을 적용하기
+posted: true
 ---
 
 # next-sitemap

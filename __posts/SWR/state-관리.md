@@ -9,6 +9,7 @@ tags:
   - SWR
   - state-관리
 title: state-관리
+posted: true
 ---
 
 # server state

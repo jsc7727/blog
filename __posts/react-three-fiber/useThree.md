@@ -9,6 +9,7 @@ tags:
   - react
   - useThree
 title: useThree
+posted: true
 ---
 
 `주의 : useThree hooks는 context로 동작하기에 Canvas 안에서만 사용해야합니다.`

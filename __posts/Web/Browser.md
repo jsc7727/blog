@@ -8,6 +8,7 @@ slug: Browser-rendering
 tags:
   - Web
 title: Browser-rendering
+posted: false
 ---
 
 # 브라우저 렌더링이란?

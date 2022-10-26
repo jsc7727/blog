@@ -9,6 +9,7 @@ tags:
   - css-props
   - emotion
 title: emotion css-props 가 뭐죠?
+posted: true
 ---
 
 # emotion css props란?

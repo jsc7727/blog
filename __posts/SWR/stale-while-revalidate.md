@@ -9,6 +9,7 @@ tags:
   - SWR
   - stale-while-revalidate
 title: stale-while-revalidate
+posted: true
 ---
 
 # stale-while-revalidate 란?

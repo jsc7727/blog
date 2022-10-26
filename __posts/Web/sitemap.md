@@ -10,6 +10,7 @@ tags:
   - sitemap
   - SEO
 title: sitemap 이란?
+posted: true
 ---
 
 # sitemap (구글 기준)
