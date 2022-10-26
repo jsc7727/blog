@@ -53,7 +53,7 @@ const Home: NextPage<HomeProps> = ({ tags, categories, postList }) => {
           >
             {'Tags'}
           </Typography>
-          <Tags tags={tags}></Tags>
+          <Tags tags={tags} component={'a'}></Tags>
         </Box>
         <Box sx={{ width: { md: '70%' } }}>
           <RecentPosts postList={postList}></RecentPosts>

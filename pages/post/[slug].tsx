@@ -23,9 +23,11 @@ const PostPage: NextPage = () => {
 };
 
 export const getStaticPaths: GetStaticPaths = () => {
-  const paths = getAllFiles().map(({ content }) => {
-    return { params: { slug: getAttributesOfContent(content)?.slug } };
-  });
+  const paths = getAllFiles()
+    .map(({ content }) => getAttributesOfContent(content))
+    .filter((el) => el.posted === true)
+    .map(({ slug }) => ({ params: { slug } }));
+
   return {
     paths,
     fallback: false,

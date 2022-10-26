@@ -63,7 +63,7 @@ export const getFileBySlug = (slug: string): FileType & { attributes?: Attribute
   try {
     const res = getAllFiles()
       .map((e) => ({ ...e, attributes: getAttributesOfContent(e.content) }))
-      .filter((e) => e.attributes.slug === slug);
+      .filter((e) => e.attributes.slug === slug && e.attributes.posted === true);
     if (res.length === 0) throw 'res zero';
     const { filename, content, attributes } = res[0];
     return { filename, content, attributes };

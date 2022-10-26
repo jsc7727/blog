@@ -1,4 +1,4 @@
-import { alpha, Box, Card, css, InputBase, Stack, styled, Typography } from '@mui/material';
+import { alpha, Box, Card, css, Grid, Grow, InputBase, Stack, styled, Typography } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import { useEffect, useMemo, useState } from 'react';
 import useGetPostsBySearchQuery from 'hooks/SWR/useGetPostsBySearchQuery';
@@ -53,15 +53,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-const StyledBox = styled(Box)(({ theme }) => ({
-  font: 'bold 30px Miwon',
-  backgroundImage: 'linear-gradient(60deg, #E21143, #FFB03A)',
-  WebkitBackgroundClip: 'text',
-  WebkitTextFillColor: 'transparent',
-  // display: 'flex',
-  // justifyContent: 'center',
-}));
-
 const SearchComponents = () => {
   const { resolvedTheme, theme } = useTheme();
 
@@ -104,36 +95,67 @@ const SearchComponents = () => {
                 height: 100%;
                 width: 100%;
                 backdrop-filter: blur(15px) brightness(25%);
-                /* backdrop-filter: opacity(80%); */
-
                 z-index: 10;
               `}
             >
               <Box m={5}>
+                <Card sx={{ margin: '15px' }}>
+                  <Stack
+                    direction="row"
+                    m={3}
+                    gap={3}
+                    css={css`
+                      &:hover {
+                        cursor: pointer;
+                      }
+                    `}
+                  >
+                    <Grid container spacing={2}>
+                      <Grid item xs={3}>
+                        <Typography>카테고리</Typography>
+                      </Grid>
+                      <Grid item xs={7}>
+                        <Typography>제목</Typography>
+                      </Grid>
+                      <Grid item xs={2}>
+                        <Typography>날짜</Typography>
+                      </Grid>
+                    </Grid>
+                  </Stack>
+                </Card>
                 {searchList !== undefined &&
                   Array.isArray(searchList) &&
                   searchList.map((v, idx) => {
+                    const rand = Math.random();
                     return (
-                      <Link key={v.slug + idx} href={`/post/${v.slug}`}>
-                        <Card sx={{ background: 'white' }}>
-                          <Stack
-                            // sx={{ bgcolor: 'secondary.main' }}
-                            key={v.slug + idx}
-                            m={3}
-                            direction="row"
-                            gap={3}
-                            css={css`
-                              &:hover {
-                                cursor: pointer;
-                              }
-                            `}
-                          >
-                            <Typography>{v.categories}</Typography>
-                            <Typography>{v.title}</Typography>
-
-                            <Typography>{v.date}</Typography>
-                          </Stack>
-                        </Card>
+                      <Link key={v.slug + idx + rand} href={`/post/${v.slug}`}>
+                        <Grow in={true} timeout={(idx + 1) * 100}>
+                          <Card sx={{ margin: '15px' }}>
+                            <Stack
+                              key={v.slug + idx}
+                              direction="row"
+                              m={3}
+                              gap={3}
+                              css={css`
+                                &:hover {
+                                  cursor: pointer;
+                                }
+                              `}
+                            >
+                              <Grid container spacing={2}>
+                                <Grid item xs={3}>
+                                  <Typography>{v.categories}</Typography>
+                                </Grid>
+                                <Grid item xs={7}>
+                                  <Typography>{v.title}</Typography>
+                                </Grid>
+                                <Grid item xs={2}>
+                                  <Typography>{v.date}</Typography>
+                                </Grid>
+                              </Grid>
+                            </Stack>
+                          </Card>
+                        </Grow>
                       </Link>
                     );
                   })}
