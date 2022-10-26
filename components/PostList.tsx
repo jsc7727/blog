@@ -31,39 +31,35 @@ const PostList = ({ title, postList }: PostListProps) => {
         return (
           <Link key={idx} href={`/post/${e.slug}`} passHref legacyBehavior>
             <a>
-              <Grow in={true} timeout={(idx + 1) * 300}>
-                <Box
-                  p={2}
-                  mt={2}
-                  mb={2}
-                  sx={{ border: 1, borderRadius: '15px' }}
-                  css={css`
-                    &:hover {
-                      cursor: pointer;
-                      transition-duration: 0.15s;
-                      transform: translate(-5px, -3px);
-                    }
-                  `}
-                  boxShadow={5}
-                >
-                  {/* <Box component={'a'}></Box> */}
-                  <Typography variant="h4">{`${e.title}`}</Typography>
-                  <Time date={e.date} readTime={e.readTime}></Time>
-                  <Typography
-                    variant="h6"
-                    css={css`
-                      max-height: 70px;
-                      display: -webkit-box;
-                      -webkit-box-orient: vertical;
-                      -webkit-line-clamp: 2;
-                      overflow: hidden;
-                    `}
-                  >
-                    {e.description}
-                  </Typography>
-                  <Tags tags={e.tags}></Tags>
-                </Box>
-              </Grow>
+              <Box
+                css={css`
+                  &:hover {
+                    cursor: pointer;
+                    transition-duration: 0.15s;
+                    transform: translate(-5px, -3px);
+                  }
+                `}
+              >
+                <Grow in={true} timeout={(idx + 1) * 300} unmountOnExit>
+                  <Box p={2} mt={2} mb={2} sx={{ border: 1, borderRadius: '15px' }} boxShadow={5}>
+                    <Typography variant="h4">{`${e.title}`}</Typography>
+                    <Time date={e.date} readTime={e.readTime}></Time>
+                    <Typography
+                      variant="h6"
+                      css={css`
+                        max-height: 70px;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 2;
+                        overflow: hidden;
+                      `}
+                    >
+                      {e.description}
+                    </Typography>
+                    <Tags tags={e.tags}></Tags>
+                  </Box>
+                </Grow>
+              </Box>
             </a>
           </Link>
         );
