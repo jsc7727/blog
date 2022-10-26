@@ -8,6 +8,7 @@ export type AttributesType = {
   slug: string;
   tags: string[];
   title: string;
+  posted: boolean;
 };
 
 export const getAttributesOfContent = (contents: string): AttributesType => {

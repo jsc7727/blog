@@ -6,6 +6,7 @@ export const getAllPosts = () => {
   const files = getAllFiles('./__posts');
   const postList: AttributesType[] = files
     .map(({ content }) => getAttributesOfContent(content))
+    .filter((el) => el.posted === true)
     .sort((a, b) => {
       const left: number = new Date(a.date).getTime();
       const right: number = new Date(b.date).getTime();

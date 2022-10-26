@@ -7,6 +7,7 @@ const getPostsBySearchQuery = (searchQuery: string) => {
   const Regex = new RegExp(`${searchQuery}`, 'i');
   return allFiles
     .map((e) => getAttributesOfContent(e.content))
+    .filter((el) => el.posted === true)
     .filter((e) => {
       return e.title.match(Regex) || e.description.match(Regex) || e.slug.match(Regex);
     });

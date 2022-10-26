@@ -6,6 +6,7 @@ export const getPostsByTag = (tag: string) => {
   const files = getAllFiles();
   const postList: AttributesType[] = files
     .map(({ content }) => getAttributesOfContent(content))
+    .filter((el) => el.posted === true)
     .filter((v) => {
       return v.tags.indexOf(tag) !== -1;
     })
