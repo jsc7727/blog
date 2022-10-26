@@ -37,6 +37,8 @@ export const globalStyles = css`
         format: ('woff2');
         font-display: swap;
       }
+      // 배경 색 전환
+      transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
       user-select: none;
       background-color: #fff;
       color: #121212;
