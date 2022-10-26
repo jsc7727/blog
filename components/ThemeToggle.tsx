@@ -3,6 +3,7 @@ import { Button, css } from '@mui/material';
 import { useTheme } from 'next-themes';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
+import { DarkModeSwitch } from './DarkModeSwitch';
 
 const ThemeToggle = () => {
   const { resolvedTheme, setTheme } = useTheme();
@@ -18,7 +19,10 @@ const ThemeToggle = () => {
   return (
     <div
       css={css`
+        display: flex;
         transition-duration: 1s;
+        justify-content: center;
+        align-items: center;
       `}
     >
       {/* <Button
@@ -36,11 +40,13 @@ const ThemeToggle = () => {
       >
         {resolvedTheme === 'light' ? 'dark' : 'light'}
       </Button> */}
-      {resolvedTheme === 'light' ? (
-        <DarkModeIcon onClick={onClickHandler} />
-      ) : (
-        <LightModeIcon onClick={onClickHandler} />
-      )}
+      <DarkModeSwitch
+        checked={resolvedTheme === 'dark'}
+        moonColor="white"
+        sunColor="white"
+        onChange={onClickHandler}
+        size={35}
+      />
     </div>
   );
 };
