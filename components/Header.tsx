@@ -25,6 +25,26 @@ const Header = () => {
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
               }}
+              css={css`
+                animation: typewriter 4s steps(44) 1s 1 normal both, blinkTextCursor 500ms steps(44) infinite normal;
+
+                @keyframes typewriter {
+                  from {
+                    width: 0;
+                  }
+                  to {
+                    width: 200px;
+                  }
+                }
+                @keyframes blinkTextCursor {
+                  from {
+                    border-right-color: rgba(255, 255, 255, 0.75);
+                  }
+                  to {
+                    border-right-color: transparent;
+                  }
+                }
+              `}
             >
               {' My First Programming'}
             </Typography>
