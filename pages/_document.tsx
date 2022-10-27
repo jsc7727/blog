@@ -9,16 +9,29 @@ export default class MyDocument extends Document {
     return (
       <Html lang="kr">
         <Head>
-          <meta name="description" content="IT TECH BLOG BY JUNIOR FRONT DEVELOPER" />
+          <meta name="description" content="IT TECH BLOG BY JUNIOR FRONT DEVELOPER JSC" />
           {/* PWA primary color */}
           {/* <meta name="theme-color" content={'black'} /> */}
 
-          <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+          <link rel="shortcut icon" href="https://my-first-programming.kr/favicon.ico" type="image/x-icon" />
           <link rel="icon" href="/favicon.ico" type="image/x-icon" />
           <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/default.min.css"
           />
+          <head dangerouslySetInnerHTML={{ __html: '<!-- BEGIN OPENGRAPH -->' }} />
+          <link rel="canonical" href="https://my-first-programming.kr" />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://my-first-programming.tistory.com" />
+          <meta property="og:site_name" content="Study For Programming" />
+          <meta property="og:title" content="Study For Programming" />
+          <meta property="og:description" content="IT TECH BLOG BY JUNIOR FRONT DEVELOPER JSC" />
+          <meta
+            property="og:image"
+            content="https://t1.daumcdn.net/tistory_admin/static/images/openGraph/opengraph.png"
+          />
+          <meta property="og:article:author" content="jsc7727" />
+          <head dangerouslySetInnerHTML={{ __html: '<!-- BEGIN OPENGRAPH -->' }} />
           {/* <link rel="stylesheet" href="/fonts/font.css" /> */}
           {(this.props as any).emotionStyleTags}
         </Head>
