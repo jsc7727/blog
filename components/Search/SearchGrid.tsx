@@ -6,7 +6,7 @@ type SearchCardProps = {
   category: string;
   title: string;
   date: string;
-  handler?: Dispatch<SetStateAction<{}>>;
+  handler?: () => void;
 };
 
 const SearchGrid = ({ category, title, date, handler }: SearchCardProps) => {
