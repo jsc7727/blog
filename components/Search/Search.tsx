@@ -1,17 +1,13 @@
-import { alpha, Box, Card, css, Grid, Grow, InputBase, Stack, styled, Typography } from '@mui/material';
+import { alpha, Box, Card, css, Grow, InputBase, styled } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import useGetPostsBySearchQuery from 'hooks/SWR/useGetPostsBySearchQuery';
 import { AttributesType } from '@common/frontMatter';
-import useSWR, { useSWRConfig } from 'swr';
-import Portal from '../Portal';
-import axios from 'axios';
-import useSWRImmutable from 'swr/immutable';
-import { debounce } from 'lodash';
-import { useTheme } from 'next-themes';
+import { useSWRConfig } from 'swr';
+import Portal from '@components/Modal/Portal';
+import debounce from 'lodash/debounce';
 import Link from 'next/link';
 import SearchGrid from './SearchGrid';
-import SearchGrowAnimation from './SearchGrowAnimation';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',

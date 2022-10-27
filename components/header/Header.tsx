@@ -1,10 +1,7 @@
 import { AppBar, css, Stack, Toolbar, Typography } from '@mui/material';
 import Link from 'next/link';
-import ThemeToggle from './ThemeToggle';
+import ThemeToggle from '../theme/ThemeToggle';
 import Search from '@components/Search/Search';
-import useGetPostsBySearchQuery from 'hooks/SWR/useGetPostsBySearchQuery';
-import { AttributesType } from '@common/frontMatter';
-import useSWR from 'swr';
 
 const Header = () => {
   return (

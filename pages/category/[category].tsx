@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { getAllFiles } from 'common/fs';
 import { AttributesType } from 'common/frontMatter';
-import PostList from '@components/PostList';
+import PostList from '@components/post/PostList';
 import { getPostsByCategory } from '@pages/api/getPostsByCategory';
 import Head from 'next/head';
 

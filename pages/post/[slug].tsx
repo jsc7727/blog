@@ -1,10 +1,10 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { getAllFiles } from 'common/fs';
 import { getAttributesOfContent } from 'common/frontMatter';
-import Content, { PostType } from '@components/Content';
+import Content, { PostType } from '@components/post/Content';
 import useSWR, { unstable_serialize } from 'swr';
 import { getPost } from 'pages/api/getPost';
-import Utterances from '@components/Utterances';
+import Utterances from '@components/comment/Utterances';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 

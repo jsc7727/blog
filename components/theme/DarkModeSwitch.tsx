@@ -50,7 +50,6 @@ export interface Props extends SVGProps {
 
 export const DarkModeSwitch: React.FC<Props> = ({
   onChange,
-  children,
   checked = false,
   size = 24,
   animationProperties = defaultProperties,

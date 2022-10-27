@@ -4,7 +4,7 @@ import Categories, { CategoryType } from '@components/Categories';
 import { getCategories } from './api/getCategories';
 import Tags from '@components/Tags';
 import { getAllTags } from './api/getAllTags';
-import RecentPosts from '@components/RecentPosts';
+import RecentPosts from '@components/post/RecentPosts';
 import { getAllPosts } from '@pages/api/getAllPosts';
 import { AttributesType } from '@common/frontMatter';
 import { Box, Stack, Typography } from '@mui/material';

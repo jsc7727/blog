@@ -1,6 +1,5 @@
-import { Card, css, Grid, Grow, Stack, Typography } from '@mui/material';
+import { css, Grid, Stack, Typography } from '@mui/material';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
-import { Dispatch, SetStateAction } from 'react';
 
 type SearchCardProps = {
   category: string;

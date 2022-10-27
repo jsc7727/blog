@@ -1,16 +1,16 @@
-import '../styles/globals.css';
-import { css, EmotionCache } from '@emotion/react';
+import '@styles/globals.css';
+import { EmotionCache } from '@emotion/react';
 import '@common/axios';
 import createEmotionCache from '@assets/theme/createEmotionCache';
 import PageProvider from '@components/helpers/PageProvider';
-import Header from '@components/Header';
+import Header from '@components/header/Header';
 import { SWRConfig } from 'swr';
 import type { AppProps } from 'next/app';
-import { PostType } from '@components/Content';
+import { PostType } from '@components/post/Content';
 import Head from 'next/head';
 import CssBaseline from '@mui/material/CssBaseline';
 import { useRouter } from 'next/router';
-import Transition from '@components/Transition';
+import Transition from '@components/animation/Transition';
 
 const clientSideEmotionCache = createEmotionCache();
 

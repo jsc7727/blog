@@ -1,9 +1,7 @@
-import { Box, css, Fade, Grow, Paper, Typography } from '@mui/material';
+import { Box, css, Grow, Typography } from '@mui/material';
 import { AttributesType } from 'common/frontMatter';
 import Link from 'next/link';
-// import Link from '@components/Link';
-// import Link from '@mui/material/Link';
-import Tags from './Tags';
+import Tags from '../Tags';
 import Time from './Time';
 
 type PostListProps = {
