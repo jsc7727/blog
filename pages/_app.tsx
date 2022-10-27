@@ -23,19 +23,19 @@ function MyApp({ Component, pageProps, emotionCache = clientSideEmotionCache }: 
   const router = useRouter();
   return (
     <>
-      <Transition location={router.pathname}>
-        <div id="portal" />
-        <Head>
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        </Head>
-        <PageProvider emotionCache={emotionCache}>
-          <CssBaseline />
-          <Header></Header>
+      <div id="portal" />
+      <Head>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <PageProvider emotionCache={emotionCache}>
+        <CssBaseline />
+        <Header></Header>
+        <Transition location={router.pathname}>
           <SWRConfig value={{ fallback: pageProps.fallback }}>
             <Component {...pageProps} />
           </SWRConfig>
-        </PageProvider>
-      </Transition>
+        </Transition>
+      </PageProvider>
     </>
   );
 }
