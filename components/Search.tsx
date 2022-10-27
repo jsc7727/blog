@@ -98,7 +98,13 @@ const SearchComponents = () => {
                 z-index: 10;
               `}
             >
-              <Box m={5}>
+              <Box
+                m={5}
+                css={css`
+                  height: 60%;
+                  overflow-y: scroll;
+                `}
+              >
                 <Card sx={{ margin: '15px' }}>
                   <Stack
                     direction="row"

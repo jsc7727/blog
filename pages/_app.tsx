@@ -9,6 +9,8 @@ import type { AppProps } from 'next/app';
 import { PostType } from '@components/Content';
 import Head from 'next/head';
 import CssBaseline from '@mui/material/CssBaseline';
+import { useRouter } from 'next/router';
+import Transition from '@components/Transition';
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -18,19 +20,22 @@ interface MyAppProps extends AppProps<{ fallback: fallbackType }> {
 }
 
 function MyApp({ Component, pageProps, emotionCache = clientSideEmotionCache }: MyAppProps) {
+  const router = useRouter();
   return (
     <>
-      <div id="portal" />
-      <Head>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
-      <PageProvider emotionCache={emotionCache}>
-        <CssBaseline />
-        <Header></Header>
-        <SWRConfig value={{ fallback: pageProps.fallback }}>
-          <Component {...pageProps} />
-        </SWRConfig>
-      </PageProvider>
+      <Transition location={router.pathname}>
+        <div id="portal" />
+        <Head>
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        </Head>
+        <PageProvider emotionCache={emotionCache}>
+          <CssBaseline />
+          <Header></Header>
+          <SWRConfig value={{ fallback: pageProps.fallback }}>
+            <Component {...pageProps} />
+          </SWRConfig>
+        </PageProvider>
+      </Transition>
     </>
   );
 }

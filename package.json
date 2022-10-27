@@ -27,6 +27,7 @@
     "react-dom": "18.2.0",
     "react-spinners": "^0.13.6",
     "react-spring": "^9.5.5",
+    "react-transition-group": "^4.4.5",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-document": "^6.1.0",
     "rehype-format": "^4.0.1",

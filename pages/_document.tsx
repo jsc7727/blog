@@ -22,7 +22,7 @@ export default class MyDocument extends Document {
           <head dangerouslySetInnerHTML={{ __html: '<!-- BEGIN OPENGRAPH -->' }} />
           <link rel="canonical" href="https://my-first-programming.kr" />
           <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://my-first-programming.tistory.com" />
+          <meta property="og:url" content="https://my-first-programming.kr" />
           <meta property="og:site_name" content="Study For Programming" />
           <meta property="og:title" content="Study For Programming" />
           <meta property="og:description" content="IT TECH BLOG BY JUNIOR FRONT DEVELOPER JSC" />
