@@ -1,7 +1,7 @@
 import { AppBar, css, Stack, Toolbar, Typography } from '@mui/material';
 import Link from 'next/link';
 import ThemeToggle from './ThemeToggle';
-import Search from '@components/Search';
+import Search from '@components/Search/Search';
 import useGetPostsBySearchQuery from 'hooks/SWR/useGetPostsBySearchQuery';
 import { AttributesType } from '@common/frontMatter';
 import useSWR from 'swr';
@@ -12,6 +12,7 @@ const Header = () => {
       <AppBar position="fixed">
         <Toolbar
           css={css`
+            height: 64px;
             justify-content: space-between;
             opacity: 0.9;
           `}
@@ -33,7 +34,7 @@ const Header = () => {
                     width: 0;
                   }
                   to {
-                    width: 200px;
+                    width: 100%;
                   }
                 }
                 @keyframes blinkTextCursor {

@@ -4,12 +4,14 @@ import { useEffect, useMemo, useState } from 'react';
 import useGetPostsBySearchQuery from 'hooks/SWR/useGetPostsBySearchQuery';
 import { AttributesType } from '@common/frontMatter';
 import useSWR, { useSWRConfig } from 'swr';
-import Portal from './Portal';
+import Portal from '../Portal';
 import axios from 'axios';
 import useSWRImmutable from 'swr/immutable';
 import { debounce } from 'lodash';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
+import SearchGrid from './SearchGrid';
+import SearchGrowAnimation from './SearchGrowAnimation';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -54,12 +56,17 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const SearchComponents = () => {
-  const { resolvedTheme, theme } = useTheme();
-
   const [searchQuery, setSearchQuery] = useState<string>('');
   const { mutate } = useSWRConfig();
   const { data: searchList } = useGetPostsBySearchQuery<AttributesType[]>(searchQuery);
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const closeHandler = () => {
+    setIsOpen(false);
+  };
+  const openHandler = () => {
+    setIsOpen(true);
+  };
 
   const debouncedSearch = useMemo(
     () =>
@@ -77,9 +84,8 @@ const SearchComponents = () => {
           <SearchIcon />
         </SearchIconWrapper>
         <StyledInputBase
-          //   onChange={(e) => setChangeString(e.target.value)}
           onChange={(e) => debouncedSearch(e.target.value)}
-          onFocus={() => setIsOpen(true)}
+          onFocus={openHandler}
           placeholder="Search…"
           inputProps={{ 'aria-label': 'search' }}
         />
@@ -88,7 +94,7 @@ const SearchComponents = () => {
         <>
           {isOpen && (
             <div
-              onClick={() => setIsOpen(false)}
+              onClick={closeHandler}
               css={css`
                 position: fixed;
                 top: 64px;
@@ -98,37 +104,16 @@ const SearchComponents = () => {
                 z-index: 10;
               `}
             >
+              <Card sx={{ sx: { margin: '10px' } }}>
+                <SearchGrid title={'제목'} category={'카테고리'} date={'날짜'} handler={closeHandler} />
+              </Card>
               <Box
-                m={5}
                 css={css`
-                  height: 60%;
+                  height: calc(100% - 64px - 72px);
                   overflow-y: scroll;
+                  overscroll-behavior: contain;
                 `}
               >
-                <Card sx={{ margin: '15px' }}>
-                  <Stack
-                    direction="row"
-                    m={3}
-                    gap={3}
-                    css={css`
-                      &:hover {
-                        cursor: pointer;
-                      }
-                    `}
-                  >
-                    <Grid container spacing={2}>
-                      <Grid item xs={3}>
-                        <Typography>카테고리</Typography>
-                      </Grid>
-                      <Grid item xs={7}>
-                        <Typography>제목</Typography>
-                      </Grid>
-                      <Grid item xs={2}>
-                        <Typography>날짜</Typography>
-                      </Grid>
-                    </Grid>
-                  </Stack>
-                </Card>
                 {searchList !== undefined &&
                   Array.isArray(searchList) &&
                   searchList.map((v, idx) => {
@@ -137,29 +122,7 @@ const SearchComponents = () => {
                       <Link key={v.slug + idx + rand} href={`/post/${v.slug}`}>
                         <Grow in={true} timeout={(idx + 1) * 100}>
                           <Card sx={{ margin: '15px' }}>
-                            <Stack
-                              key={v.slug + idx}
-                              direction="row"
-                              m={3}
-                              gap={3}
-                              css={css`
-                                &:hover {
-                                  cursor: pointer;
-                                }
-                              `}
-                            >
-                              <Grid container spacing={2}>
-                                <Grid item xs={3}>
-                                  <Typography>{v.categories}</Typography>
-                                </Grid>
-                                <Grid item xs={7}>
-                                  <Typography>{v.title}</Typography>
-                                </Grid>
-                                <Grid item xs={2}>
-                                  <Typography>{v.date}</Typography>
-                                </Grid>
-                              </Grid>
-                            </Stack>
+                            <SearchGrid title={v.title} category={v.categories[0]} date={v.date} />
                           </Card>
                         </Grow>
                       </Link>
