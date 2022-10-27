@@ -40,10 +40,11 @@ const PostList = ({ title, postList }: PostListProps) => {
               >
                 <Grow in={true} timeout={(idx + 1) * 300} unmountOnExit>
                   <Box p={2} mt={2} mb={2} sx={{ border: 1, borderRadius: '15px' }} boxShadow={5}>
-                    <Typography variant="h4">{`${e.title}`}</Typography>
+                    <Typography variant="h4" component="h2">{`${e.title}`}</Typography>
                     <Time date={e.date} readTime={e.readTime}></Time>
                     <Typography
                       variant="h6"
+                      component="h3"
                       css={css`
                         max-height: 70px;
                         display: -webkit-box;
