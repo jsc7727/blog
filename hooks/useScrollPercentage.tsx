@@ -9,7 +9,7 @@ export default function useScrollPercentage() {
       throttle(() => {
         const tabSelectorRef = window.document.querySelector('HTML') as any;
         if (!tabSelectorRef) return;
-        const nextTabnavOn = window.scrollY > tabSelectorRef.offsetTop + 100;
+        const nextTabnavOn = window.scrollY > tabSelectorRef.offsetTop + 50;
         if (nextTabnavOn !== isTabnavOn) {
           setIsTabnavOn(nextTabnavOn);
         }
