@@ -42,7 +42,7 @@ const Categories = ({ categories }: { categories: CategoryType }) => {
                   >
                     <CardActionArea>
                       <Image
-                        src={`/images/category/${category}.jpg`}
+                        src={`/images/category/${category}.webp`}
                         alt={category}
                         width={345}
                         height={200}
