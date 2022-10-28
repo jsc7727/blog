@@ -2,11 +2,16 @@ import { AppBar, css, Stack, Toolbar, Typography } from '@mui/material';
 import Link from 'next/link';
 import ThemeToggle from '../theme/ThemeToggle';
 import Search from '@components/Search/Search';
+import TopScrollPercentBar from './TopScrollPercentBar';
 
 const Header = () => {
   return (
     <>
-      <AppBar position="fixed">
+      <AppBar
+        css={css`
+          position: sticky;
+        `}
+      >
         <Toolbar
           css={css`
             height: 64px;
@@ -51,9 +56,9 @@ const Header = () => {
             <Search></Search>
             <ThemeToggle></ThemeToggle>
           </Stack>
+          <TopScrollPercentBar></TopScrollPercentBar>
         </Toolbar>
       </AppBar>
-      <Toolbar />
     </>
   );
 };

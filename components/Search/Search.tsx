@@ -69,7 +69,7 @@ const SearchComponents = () => {
       debounce((searchQuery: string) => {
         setSearchQuery(searchQuery);
         mutate(['getPostsBySearchQuery', searchQuery]);
-      }, 500),
+      }, 800),
     [mutate],
   );
 
