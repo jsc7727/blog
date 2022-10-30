@@ -4,6 +4,7 @@ import PostList from '@components/post/PostList';
 import { getPostsByTag } from '@pages/api/getPostsByTag';
 import { getAllTags } from '@pages/api/getAllTags';
 import Head from 'next/head';
+import Layout from '@components/layout/Layout';
 
 type TagPageProps = {
   tag: string;
@@ -16,7 +17,9 @@ const TagPage: NextPage<TagPageProps> = ({ tag, postList }) => {
       <Head>
         <title>{`'${tag}' 태그의 글 목록`}</title>
       </Head>
-      <PostList title={tag} postList={postList}></PostList>
+      <Layout>
+        <PostList title={tag} postList={postList}></PostList>
+      </Layout>
     </>
   );
 };

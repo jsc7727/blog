@@ -1,5 +1,4 @@
 import type { GetStaticProps, NextPage } from 'next';
-import container from '@styles/container.emotion';
 import Categories, { CategoryType } from '@components/Categories';
 import { getCategories } from './api/getCategories';
 import Tags from '@components/Tags';
@@ -9,6 +8,7 @@ import { getAllPosts } from '@pages/api/getAllPosts';
 import { AttributesType } from '@common/frontMatter';
 import { Box, Stack, Typography } from '@mui/material';
 import Head from 'next/head';
+import Layout from '@components/layout/Layout';
 
 type HomeProps = {
   tags: string[];
@@ -18,11 +18,11 @@ type HomeProps = {
 
 const Home: NextPage<HomeProps> = ({ tags, categories, postList }) => {
   return (
-    <Box css={container.container}>
+    <>
       <Head>
         <title>{'Study For Programming'}</title>
       </Head>
-      <Stack maxWidth={1130} alignContent="center">
+      <Layout>
         <Box p={2}>
           <Typography
             p={2}
@@ -60,8 +60,8 @@ const Home: NextPage<HomeProps> = ({ tags, categories, postList }) => {
             <RecentPosts postList={postList}></RecentPosts>
           </Box>
         </Stack>
-      </Stack>
-    </Box>
+      </Layout>
+    </>
   );
 };
 

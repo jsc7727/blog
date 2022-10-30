@@ -12,8 +12,24 @@ const Content = () => {
   const { slug } = useRouter().query;
   const { data: post } = useSWR<PostType>(['post', slug]);
   return (
-    <Box p={5} className="post__content">
-      <Typography variant="h2" component="h1" sx={{ fontWeight: '700' }}>
+    <Box
+      p={5}
+      className="post__content"
+      css={css`
+        @media (max-width: 600px) {
+          font-size: 0.8rem;
+        }
+      `}
+    >
+      <Typography
+        variant="h2"
+        component="h1"
+        css={css`
+          @media (max-width: 600px) {
+            font-size: 2rem;
+          }
+        `}
+      >
         {post?.attributes?.title}
       </Typography>
       <Time date={post?.attributes.date as string} readTime={post?.attributes.readTime as string}></Time>

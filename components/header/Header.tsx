@@ -10,6 +10,9 @@ const Header = () => {
       <AppBar
         css={css`
           position: sticky;
+          display: flex;
+          align-items: center;
+          width: 100%;
         `}
       >
         <Toolbar
@@ -17,6 +20,8 @@ const Header = () => {
             height: 64px;
             justify-content: space-between;
             opacity: 0.9;
+            width: 100%;
+            max-width: 1130px;
           `}
         >
           <Link href="/">

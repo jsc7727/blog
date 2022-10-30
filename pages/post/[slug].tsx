@@ -7,6 +7,7 @@ import { getPost } from 'pages/api/getPost';
 import Utterances from '@components/comment/Utterances';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import Layout from '@components/layout/Layout';
 
 const PostPage: NextPage = () => {
   const { slug } = useRouter().query;
@@ -16,8 +17,10 @@ const PostPage: NextPage = () => {
       <Head>
         <title>{post?.attributes?.title}</title>
       </Head>
-      <Content></Content>
-      <Utterances></Utterances>
+      <Layout>
+        <Content></Content>
+        <Utterances></Utterances>
+      </Layout>
     </>
   );
 };

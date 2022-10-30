@@ -4,6 +4,7 @@ import { AttributesType } from 'common/frontMatter';
 import PostList from '@components/post/PostList';
 import { getPostsByCategory } from '@pages/api/getPostsByCategory';
 import Head from 'next/head';
+import Layout from '@components/layout/Layout';
 
 type CategoryPageProps = {
   category: string;
@@ -16,7 +17,9 @@ const CategoryPage: NextPage<CategoryPageProps> = ({ category, postList }) => {
       <Head>
         <title>{`'${category}' 카테고리의 글 목록`}</title>
       </Head>
-      <PostList title={category} postList={postList}></PostList>
+      <Layout>
+        <PostList title={category} postList={postList}></PostList>
+      </Layout>
     </>
   );
 };
