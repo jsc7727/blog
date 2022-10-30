@@ -23,7 +23,6 @@ const Header = () => {
             <Typography
               sx={{
                 cursor: 'pointer',
-                fontFamily: 'Miwon',
                 background: '-webkit-linear-gradient(45deg, #ff4b22 30%, #FF8E53 90%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',

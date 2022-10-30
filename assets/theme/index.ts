@@ -11,8 +11,7 @@ export const lightTheme = createTheme({
     mode: 'light',
   },
   typography: {
-    fontFamily: 'Miwon',
-    // textShadow: '2px 2px 2px gray';
+    fontFamily: 'Pretendard',
   },
 });
 
@@ -24,19 +23,13 @@ export const darkTheme = createTheme({
     mode: 'dark',
   },
   typography: {
-    fontFamily: 'Miwon',
+    fontFamily: 'Pretendard',
   },
 });
 
 export const globalStyles = css`
   :root {
     body {
-      @font-face {
-        font-family: Miwon;
-        src: url('/fonts/Miwon.woff2');
-        format: ('woff2');
-        font-display: swap;
-      }
       // 배경 색 전환
       transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
       user-select: none;

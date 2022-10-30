@@ -47,7 +47,7 @@ const TopScrollPercentBar = () => {
           color: #ff4b22;
           right: 10px;
           bottom: 10px;
-          transition: opacity 0.5s 0.5s ease-in-out;
+          transition: opacity 0.2s 0.2s ease-in-out;
           &:hover {
             transition: transform 100ms ease-in-out;
             transform: translate(0, -2px);

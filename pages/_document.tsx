@@ -18,6 +18,17 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/default.min.css"
           />
+
+          <link
+            rel="stylesheet"
+            as="style"
+            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css"
+          />
+
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
+
           <head dangerouslySetInnerHTML={{ __html: '<!-- BEGIN OPENGRAPH -->' }} />
           <link rel="canonical" href="https://my-first-programming.kr" />
           <meta property="og:type" content="website" />
@@ -31,7 +42,6 @@ export default class MyDocument extends Document {
           />
           <meta property="og:article:author" content="jsc7727" />
           <head dangerouslySetInnerHTML={{ __html: '<!-- BEGIN OPENGRAPH -->' }} />
-          {/* <link rel="stylesheet" href="/fonts/font.css" /> */}
           {(this.props as any).emotionStyleTags}
         </Head>
         <body>

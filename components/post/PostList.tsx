@@ -17,7 +17,7 @@ const PostList = ({ title, postList }: PostListProps) => {
         variant="h2"
         component="h1"
         sx={{
-          fontFamily: 'Miwon',
+          fontWeight: '700',
           background: '-webkit-linear-gradient(45deg, #ff4b22 30%, #fcbc19 90%)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',

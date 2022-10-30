@@ -28,7 +28,7 @@ const Home: NextPage<HomeProps> = ({ tags, categories, postList }) => {
           variant="h2"
           component="h1"
           sx={{
-            fontFamily: 'Miwon',
+            fontWeight: '700',
             background: '-webkit-linear-gradient(45deg, #ff4b22  10%, #fcbc19 90%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
@@ -45,7 +45,7 @@ const Home: NextPage<HomeProps> = ({ tags, categories, postList }) => {
             variant="h2"
             component="h1"
             sx={{
-              fontFamily: 'Miwon',
+              fontWeight: '700',
               background: '-webkit-linear-gradient(45deg, #ff4b22 10%, #fcbc19 90%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',

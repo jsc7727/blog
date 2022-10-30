@@ -1,6 +1,6 @@
 import { AttributesType } from '@common/frontMatter';
 import { FileType } from '@common/fs';
-import { Box, Typography } from '@mui/material';
+import { Box, css, Typography } from '@mui/material';
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
 import Time from './Time';
@@ -13,7 +13,7 @@ const Content = () => {
   const { data: post } = useSWR<PostType>(['post', slug]);
   return (
     <Box p={5} className="post__content">
-      <Typography variant="h2" component="h1">
+      <Typography variant="h2" component="h1" sx={{ fontWeight: '700' }}>
         {post?.attributes?.title}
       </Typography>
       <Time date={post?.attributes.date as string} readTime={post?.attributes.readTime as string}></Time>
