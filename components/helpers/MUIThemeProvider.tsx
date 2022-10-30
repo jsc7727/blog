@@ -6,10 +6,10 @@ import { FC, useEffect, useState } from 'react';
 
 const MUIThemeProvider: FC<{ children: React.ReactNode }> = ({ children }) => {
   const { resolvedTheme } = useTheme();
-  const [currentTheme, setCurrentTheme] = useState(darkTheme);
+  const [currentTheme, setCurrentTheme] = useState(lightTheme);
 
   useEffect(() => {
-    resolvedTheme === 'light' ? setCurrentTheme(lightTheme) : setCurrentTheme(darkTheme);
+    resolvedTheme === 'dark' ? setCurrentTheme(darkTheme) : setCurrentTheme(lightTheme);
   }, [resolvedTheme]);
 
   return (

@@ -13,8 +13,8 @@ export default function createEmotionCache() {
     insertionPoint = emotionInsertionPoint ?? undefined;
   }
 
-  // return createCache({ key: 'mui-style', insertionPoint });
-  return createCache({ key: 'css', prepend: true });
+  return createCache({ key: 'mui-style', insertionPoint });
+  // return createCache({ key: 'css', prepend: true });
 }
 
 // prepend: true moves MUI styles to the top of the <head> so they're loaded first.

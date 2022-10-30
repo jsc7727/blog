@@ -1,5 +1,5 @@
 import type { GetStaticProps, NextPage } from 'next';
-import styles from '../styles/Home.module.css';
+import container from '@styles/container.emotion';
 import Categories, { CategoryType } from '@components/Categories';
 import { getCategories } from './api/getCategories';
 import Tags from '@components/Tags';
@@ -18,48 +18,50 @@ type HomeProps = {
 
 const Home: NextPage<HomeProps> = ({ tags, categories, postList }) => {
   return (
-    <div className={styles.container}>
+    <Box css={container.container}>
       <Head>
         <title>{'Study For Programming'}</title>
       </Head>
-      <Box p={2}>
-        <Typography
-          p={2}
-          variant="h2"
-          component="h1"
-          sx={{
-            fontWeight: '700',
-            background: '-webkit-linear-gradient(45deg, #ff4b22  10%, #fcbc19 90%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-          }}
-        >
-          {'Category'}
-        </Typography>
-        <Categories categories={categories}></Categories>
-      </Box>
-      <Stack sx={{ flexDirection: { xs: 'column', md: 'row-reverse' } }}>
-        <Box p={2} sx={{ width: { md: '30%' } }}>
+      <Stack maxWidth={1130} alignContent="center">
+        <Box p={2}>
           <Typography
             p={2}
             variant="h2"
             component="h1"
             sx={{
               fontWeight: '700',
-              background: '-webkit-linear-gradient(45deg, #ff4b22 10%, #fcbc19 90%)',
+              background: '-webkit-linear-gradient(45deg, #ff4b22  10%, #fcbc19 90%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
             }}
           >
-            {'Tags'}
+            {'Category'}
           </Typography>
-          <Tags tags={tags} component={'a'}></Tags>
+          <Categories categories={categories}></Categories>
         </Box>
-        <Box sx={{ width: { md: '70%' } }}>
-          <RecentPosts postList={postList}></RecentPosts>
-        </Box>
+        <Stack sx={{ flexDirection: { xs: 'column', md: 'row-reverse' } }}>
+          <Box p={2} sx={{ width: { md: '30%' } }}>
+            <Typography
+              p={2}
+              variant="h2"
+              component="h1"
+              sx={{
+                fontWeight: '700',
+                background: '-webkit-linear-gradient(45deg, #ff4b22 10%, #fcbc19 90%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
+              {'Tags'}
+            </Typography>
+            <Tags tags={tags} component={'a'}></Tags>
+          </Box>
+          <Box sx={{ width: { md: '70%' } }}>
+            <RecentPosts postList={postList}></RecentPosts>
+          </Box>
+        </Stack>
       </Stack>
-    </div>
+    </Box>
   );
 };
 
