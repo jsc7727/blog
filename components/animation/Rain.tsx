@@ -12,7 +12,6 @@ const RainComp = () => {
   const rainAttributes: rainAttributeType[] = useMemo(() => {
     let count = 0;
     return new Array(30).fill(null).map(() => {
-      console.log('test');
       const randoHundo = Math.floor(Math.random() * (98 - 1 + 1) + 1);
       const randoFiver = Math.floor(Math.random() * (5 - 2 + 1) + 2);
       const randoHundoString = String(randoHundo);

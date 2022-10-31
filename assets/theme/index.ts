@@ -28,19 +28,6 @@ export const darkTheme = createTheme({
 });
 
 export const globalStyles = css`
-  html,
-  body {
-    scroll-behavior: smooth;
-    // 배경 색 전환
-    transition: background-color 0.4s ease 0s, color 0.4s ease 0s;
-    user-select: none;
-    padding: 0;
-    margin: 0;
-    font-family: Pretendard, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
-      Droid Sans, Helvetica Neue, sans-serif;
-    height: 100%;
-  }
-
   a {
     color: inherit;
     text-decoration: none;
@@ -62,6 +49,21 @@ export const globalStyles = css`
   }
   .post__content img {
     width: 100%;
+  }
+
+  body {
+    scroll-behavior: smooth;
+    // 배경 색 전환
+    transition: background-color 0.4s ease 0s, color 0.4s ease 0s;
+    user-select: none;
+    padding: 0;
+    margin: 0;
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
+      Droid Sans, Helvetica Neue, sans-serif;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    /* background: linear-gradient(#123 30%, #667); */
   }
 
   :root {
@@ -92,6 +94,7 @@ export const globalStyles = css`
 
   [data-theme='dark'] {
     body {
+      /* background: linear-gradient(#123 30%, #667); */
       /* height: 100%; */
       /* background: #121212; */
       /* background: red; */
