@@ -52,7 +52,6 @@ export const globalStyles = css`
   }
 
   body {
-    scroll-behavior: smooth;
     // 배경 색 전환
     transition: background-color 0.4s ease 0s, color 0.4s ease 0s;
     user-select: none;
@@ -67,6 +66,7 @@ export const globalStyles = css`
   }
 
   :root {
+    scroll-behavior: smooth;
     height: 100%;
     width: 100%;
     *::-webkit-scrollbar {

@@ -75,12 +75,12 @@ const SearchComponents = () => {
 
   useEffect(() => {
     if (isOpen === true) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflowY = 'hidden';
     } else {
-      document.body.style.overflow = 'scroll';
+      document.body.style.overflowY = 'scroll';
     }
     return () => {
-      document.body.style.overflow = 'scroll';
+      document.body.style.overflowY = 'scroll';
     };
   }, [isOpen]);
 
@@ -129,6 +129,7 @@ const SearchComponents = () => {
                   css={css`
                     height: calc(100% - 64px - 72px);
                     overflow-y: scroll;
+                    overflow-x: hidden;
                     overscroll-behavior: contain;
                   `}
                 >
