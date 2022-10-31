@@ -70,16 +70,20 @@ export const globalStyles = css`
     height: 100%;
     width: 100%;
     *::-webkit-scrollbar {
+      cursor: pointer;
+      /* z-index: 100; */
       width: 10px;
       height: 10px;
     }
 
     *::-webkit-scrollbar-thumb {
+      /* z-index: 100; */
       background: #ff4b22;
       border-radius: 10px;
     }
 
     *::-webkit-scrollbar-track {
+      /* z-index: 100; */
       background: gray;
       border-radius: 10px;
     }

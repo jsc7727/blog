@@ -31,9 +31,11 @@ const Header = () => {
                 background: '-webkit-linear-gradient(45deg, #ff4b22 30%, #FF8E53 90%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
+                fontSize: '1.5rem',
+                fontWeight: '700',
               }}
               css={css`
-                animation: typewriter 4s steps(44) 1s 1 normal both, blinkTextCursor 500ms steps(44) infinite normal;
+                /* animation: typewriter 4s steps(44) 1s 1 normal both, blinkTextCursor 500ms steps(44) infinite normal;
 
                 @keyframes typewriter {
                   from {
@@ -50,7 +52,7 @@ const Header = () => {
                   to {
                     border-right-color: transparent;
                   }
-                }
+                } */
               `}
             >
               {' My First Programming'}

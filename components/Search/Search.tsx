@@ -1,6 +1,6 @@
 import { alpha, Box, Card, css, Grow, InputBase, styled } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import { useMemo, useState } from 'react';
+import { EffectCallback, useEffect, useMemo, useState } from 'react';
 import useGetPostsBySearchQuery from 'hooks/SWR/useGetPostsBySearchQuery';
 import { AttributesType } from '@common/frontMatter';
 import { useSWRConfig } from 'swr';
@@ -73,6 +73,17 @@ const SearchComponents = () => {
     [mutate],
   );
 
+  useEffect(() => {
+    if (isOpen === true) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'scroll';
+    }
+    return () => {
+      document.body.style.overflow = 'scroll';
+    };
+  }, [isOpen]);
+
   return (
     <>
       <Search>
@@ -89,43 +100,56 @@ const SearchComponents = () => {
       <Portal selector="#portal">
         <>
           {isOpen && (
-            <div
+            <Box
               onClick={closeHandler}
               css={css`
                 position: fixed;
-                top: 64px;
                 height: 100%;
                 width: 100%;
+                display: flex;
+                justify-content: center;
                 backdrop-filter: blur(15px) brightness(25%);
                 z-index: 100;
               `}
             >
-              <Card sx={{ sx: { margin: '10px' } }}>
-                <SearchGrid title={'제목'} category={'카테고리'} date={'날짜'} handler={closeHandler} />
-              </Card>
+              (
               <Box
                 css={css`
-                  height: calc(100% - 64px - 72px);
-                  overflow-y: scroll;
-                  overscroll-behavior: contain;
+                  max-width: 1130px;
+                  position: fixed;
+                  top: 64px;
+                  height: 100%;
+                  width: 100%;
                 `}
               >
-                {searchList !== undefined &&
-                  Array.isArray(searchList) &&
-                  searchList.map((v, idx) => {
-                    const rand = Math.random();
-                    return (
-                      <Link key={v.slug + idx + rand} href={`/post/${v.slug}`}>
-                        <Grow in={true} timeout={(idx + 1) * 100}>
-                          <Card sx={{ margin: '15px' }}>
-                            <SearchGrid title={v.title} category={v.categories[0]} date={v.date} />
-                          </Card>
-                        </Grow>
-                      </Link>
-                    );
-                  })}
+                <Card sx={{ sx: { margin: '10px' } }}>
+                  <SearchGrid title={'제목'} category={'카테고리'} date={'날짜'} handler={closeHandler} />
+                </Card>
+                <Box
+                  css={css`
+                    height: calc(100% - 64px - 72px);
+                    overflow-y: scroll;
+                    overscroll-behavior: contain;
+                  `}
+                >
+                  {searchList !== undefined &&
+                    Array.isArray(searchList) &&
+                    searchList.map((v, idx) => {
+                      const rand = Math.random();
+                      return (
+                        <Link key={v.slug + idx + rand} href={`/post/${v.slug}`}>
+                          <Grow in={true} timeout={(idx + 1) * 100}>
+                            <Card sx={{ margin: '15px' }}>
+                              <SearchGrid title={v.title} category={v.categories[0]} date={v.date} />
+                            </Card>
+                          </Grow>
+                        </Link>
+                      );
+                    })}
+                </Box>
               </Box>
-            </div>
+              )
+            </Box>
           )}
         </>
       </Portal>
