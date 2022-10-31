@@ -1,9 +1,27 @@
 import { css } from '@emotion/react';
 import { useTheme } from 'next-themes';
-import { memo, useEffect, useState } from 'react';
+import { memo, useEffect, useMemo, useState } from 'react';
+type rainAttributeType = {
+  randoFiver: number;
+  count: number;
+  animationDelay: string;
+  animationDuration: string;
+};
 
 const RainComp = () => {
-  let count = 0;
+  const rainAttributes: rainAttributeType[] = useMemo(() => {
+    let count = 0;
+    return new Array(30).fill(null).map(() => {
+      console.log('test');
+      const randoHundo = Math.floor(Math.random() * (98 - 1 + 1) + 1);
+      const randoFiver = Math.floor(Math.random() * (5 - 2 + 1) + 2);
+      const randoHundoString = String(randoHundo);
+      const animationDelay = '0.' + randoHundoString;
+      const animationDuration = '0.5' + randoHundoString;
+      const c = (count += randoHundo) % 100;
+      return { randoFiver, count: c, animationDelay, animationDuration };
+    });
+  }, []);
 
   return (
     <div
@@ -11,13 +29,7 @@ const RainComp = () => {
         ${CssProps.rain}
       `}
     >
-      {new Array(30).fill(null).map((_, idx) => {
-        const randoHundo = Math.floor(Math.random() * (98 - 1 + 1) + 1);
-        const randoFiver = Math.floor(Math.random() * (5 - 2 + 1) + 2);
-        count += randoHundo;
-        const randoHundoString = String(randoHundo);
-        const animationDelay = '0.' + randoHundoString;
-        const animationDuration = '0.5' + randoHundoString;
+      {rainAttributes.map(({ randoFiver, count, animationDelay, animationDuration }, idx) => {
         return (
           <div
             key={idx}
