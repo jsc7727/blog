@@ -1,3 +1,5 @@
+import Rain from '@components/animation/Rain';
+import Snow from '@components/animation/Snow';
 import { Box, css, Stack } from '@mui/material';
 
 type LayoutProps = {
@@ -12,7 +14,15 @@ const Layout = ({ children }: LayoutProps) => {
         justify-content: center;
       `}
     >
-      <Stack maxWidth={1130} width={'100%'} alignContent="center">
+      <Rain></Rain>
+      <Stack
+        maxWidth={1130}
+        width={'100%'}
+        alignContent="center"
+        css={css`
+          z-index: 10;
+        `}
+      >
         {children}
       </Stack>
     </Box>

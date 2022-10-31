@@ -97,7 +97,7 @@ const SearchComponents = () => {
                 height: 100%;
                 width: 100%;
                 backdrop-filter: blur(15px) brightness(25%);
-                z-index: 10;
+                z-index: 100;
               `}
             >
               <Card sx={{ sx: { margin: '10px' } }}>

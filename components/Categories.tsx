@@ -14,7 +14,7 @@ const Categories = ({ categories }: { categories: CategoryType }) => {
     >
       {Object.entries(categories).map(([category, count], idx) => {
         return (
-          <Grid key={category} item xs={12} sm={6} md={4} lg={3} xl={2} sx={{ flexBasis: { xs: 'auto' } }}>
+          <Grid key={category} item xs={12} sm={6} md={4} sx={{ flexBasis: { xs: 'auto' } }}>
             <Link href={`/category/${category}`}>
               <Box
                 css={css`
