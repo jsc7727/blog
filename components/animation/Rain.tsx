@@ -82,6 +82,7 @@ const CssProps = {
   rain: css`
     position: absolute;
     left: 0;
+    z-index: 0;
     width: 100%;
     height: 100%;
   `,
@@ -90,6 +91,7 @@ const CssProps = {
     position: absolute;
     width: 1px;
     height: 120px;
+    z-index: 0;
     pointer-events: none;
     animation: drop 0.5s linear infinite;
 
@@ -108,6 +110,7 @@ const CssProps = {
   stem: css`
     width: 1px;
     height: 60%;
+    z-index: 0;
     margin-left: 7px;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25));
     animation: _stem 0.5s linear infinite;
@@ -131,6 +134,7 @@ const CssProps = {
   `,
 
   splat: css`
+    z-index: 0;
     width: 15px;
     height: 10px;
     border-top: 2px dotted rgba(255, 255, 255, 0.5);
