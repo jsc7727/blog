@@ -65,15 +65,12 @@ RainComp.displayName = 'RainComp';
 
 const Rain = () => {
   const [mounted, setMounted] = useState(false);
-  const { resolvedTheme } = useTheme();
   useEffect(() => {
     setMounted(true);
   }, []);
-  console.log(resolvedTheme);
   if (mounted === false) return <div></div>;
   return (
     <>
-      {' '}
       <RainComp></RainComp>
     </>
   );
