@@ -20,6 +20,60 @@ posted: true
 
 예를들어 아래처럼 style로 작성하는 것이 아닌 엘리먼트에 css 속성을 추가할 수 있습니다.
 
+# css-props는 어떻게 돌아갈까요?
+
+먼저 [리액트](https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#whats-different-in-the-new-transform)에서는 jsx파일을 자동으로 컴파일 하는 과정을 보여줍니다.
+
+아래 파일을 컴파일 하게 된다면
+
+```javascript
+function App() {
+  return <h1>Hello World</h1>;
+}
+```
+
+아래처럼 변합니다.
+
+```javascript
+// Inserted by a compiler (don't import it yourself!)
+import { jsx as _jsx } from 'react/jsx-runtime';
+
+function App() {
+  return _jsx('h1', { children: 'Hello world' });
+}
+```
+
+`node_modules\@emotion\react\src\jsx-runtime.js` 파일을 열어보면
+
+property로 css가 있으면 createEmotionProps 함수를 거쳐서 ReactJSXRuntime을 합니다.
+
+```javascript
+// @flow
+import * as ReactJSXRuntime from 'react/jsx-runtime';
+import Emotion, { createEmotionProps } from './emotion-element';
+import { hasOwnProperty } from './utils';
+
+export const Fragment = ReactJSXRuntime.Fragment;
+
+export function jsx(type: any, props: any, key: any) {
+  if (!hasOwnProperty.call(props, 'css')) {
+    return ReactJSXRuntime.jsx(type, props, key);
+  }
+
+  return ReactJSXRuntime.jsx(Emotion, createEmotionProps(type, props), key);
+}
+
+export function jsxs(type: any, props: any, key: any) {
+  if (!hasOwnProperty.call(props, 'css')) {
+    return ReactJSXRuntime.jsxs(type, props, key);
+  }
+
+  return ReactJSXRuntime.jsxs(Emotion, createEmotionProps(type, props), key);
+}
+```
+
+그럼 돌아가는 원리를 알았으니 직접 사용해봅시다.
+
 # css props 사용
 
 ```javascript

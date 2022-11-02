@@ -9,7 +9,7 @@ tags:
   - storybook
   - vercel
   - deploy
-title: 'storybook-vercel-deploy'
+title: 'Storybook vercel deploy'
 posted: true
 ---
 
