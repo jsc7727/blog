@@ -1,6 +1,7 @@
+/** @jsxImportSource @emotion/react */
+
 import { css } from '@emotion/react';
-import { useTheme } from 'next-themes';
-import { memo, useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 type rainAttributeType = {
   randoFiver: number;
   count: number;
@@ -8,7 +9,7 @@ type rainAttributeType = {
   animationDuration: string;
 };
 
-const RainComp = () => {
+export const RainComp = () => {
   const rainAttributes: rainAttributeType[] = useMemo(() => {
     let count = 0;
     return new Array(30).fill(null).map(() => {
@@ -34,7 +35,7 @@ const RainComp = () => {
             key={idx}
             css={css`
               ${CssProps.drop};
-              left: ${count % 100}%;
+              left: ${count % 98}%;
               bottom: ${randoFiver + randoFiver - 1 + 100}%;
               animation-delay: ${animationDelay}s;
               animation-duration: ${animationDuration}s;
@@ -85,6 +86,7 @@ const CssProps = {
     z-index: 0;
     width: 100%;
     height: 100%;
+    overflow: hidden;
   `,
 
   drop: css`
