@@ -4,7 +4,7 @@ categories:
 date: '2022-11-03'
 readTime: '3'
 description: emotion css-props error
-slug: emotion-css-props
+slug: emotion-css-prop-error
 tags:
   - css-props
   - emotion
