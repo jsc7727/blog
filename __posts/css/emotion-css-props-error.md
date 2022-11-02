@@ -20,7 +20,7 @@ posted: true
 html 파일을 열어보면 아래와 같은 내용이 적혀있다.
 emotion css props를 사용할때 생기는 문제이다.
 
-```
+```text
 css="You have tried to stringify object returned from css function. It isn't supposed to be used directly (e.g. as value of the className prop), but rather handed to emotion so it can handle it (e.g. as value of css prop)."
 ```
 
