@@ -13,7 +13,7 @@ title: emotion css-props error
 posted: true
 ---
 
-# css="You have tried to stringify object returned ~~~
+# 오류 You have tried to stringify object returned from css function.
 
 문제
 
