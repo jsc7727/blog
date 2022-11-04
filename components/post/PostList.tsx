@@ -1,7 +1,8 @@
-import { Box, css, Grow, Typography } from '@mui/material';
+import { Box, css, Grow, Stack, Typography } from '@mui/material';
 import { AttributesType } from 'common/frontMatter';
 import Link from 'next/link';
 import Tags from '../Tags';
+import Thumbnail from './Thumbnail';
 import Time from './Time';
 
 type PostListProps = {
@@ -39,23 +40,40 @@ const PostList = ({ title, postList }: PostListProps) => {
                 `}
               >
                 <Grow in={true} timeout={(idx + 1) * 300} unmountOnExit>
-                  <Box p={2} mt={2} mb={2} sx={{ border: 1, borderRadius: '15px' }} boxShadow={5}>
-                    <Typography variant="h4" component="h2">{`${e.title}`}</Typography>
-                    <Time date={e.date} readTime={e.readTime}></Time>
-                    <Typography
-                      variant="h6"
-                      component="h3"
-                      css={css`
-                        max-height: 70px;
-                        display: -webkit-box;
-                        -webkit-box-orient: vertical;
-                        -webkit-line-clamp: 2;
-                        overflow: hidden;
-                      `}
-                    >
-                      {e.description}
-                    </Typography>
-                    <Tags tags={e.tags}></Tags>
+                  <Box
+                    className="here"
+                    p={2}
+                    mt={2}
+                    mb={2}
+                    sx={{
+                      border: 1,
+                      borderRadius: '15px',
+                      display: 'flex',
+                      flexDirection: 'row',
+                      gap: '20px',
+                      // justifyContent: 'space-between',
+                    }}
+                    boxShadow={5}
+                  >
+                    <Thumbnail width={200} height={150} thumbnail={e.thumbnail} media></Thumbnail>
+                    <Box>
+                      <Typography variant="h4" component="h2">{`${e.title}`}</Typography>
+                      <Time date={e.date} readTime={e.readTime}></Time>
+                      <Typography
+                        variant="h6"
+                        component="h3"
+                        css={css`
+                          max-height: 70px;
+                          display: -webkit-box;
+                          -webkit-box-orient: vertical;
+                          -webkit-line-clamp: 2;
+                          overflow: hidden;
+                        `}
+                      >
+                        {e.description}
+                      </Typography>
+                      <Tags tags={e.tags}></Tags>
+                    </Box>
                   </Box>
                 </Grow>
               </Box>
