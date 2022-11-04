@@ -10,7 +10,7 @@ const Thumbnail = ({ thumbnail }: ThumbnailTypes) => {
       {thumbnail && (
         <Image
           src={thumbnail}
-          alt="asdf"
+          alt={thumbnail}
           width={1130}
           height={600}
           priority
