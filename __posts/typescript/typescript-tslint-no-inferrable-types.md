@@ -9,6 +9,7 @@ tags:
   - typescript
   - eslint
 title: 'typescript-eslint-no-inferrable-types 에러'
+thumbnail: '/images/thumbnail/typescript.webp'
 posted: true
 ---
 

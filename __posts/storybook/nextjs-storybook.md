@@ -9,6 +9,7 @@ tags:
   - storybook
   - nextjs
 title: 'nextjs 에서 storybook 설치'
+thumbnail: '/images/thumbnail/storybook.png'
 posted: false
 ---
 

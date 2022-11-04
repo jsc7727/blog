@@ -1,5 +1,4 @@
-import { css } from '@emotion/react';
-import { Box } from '@mui/material';
+import { css, SerializedStyles } from '@emotion/react';
 import Image from 'next/image';
 
 type ThumbnailTypes = {
@@ -7,23 +6,19 @@ type ThumbnailTypes = {
   width?: number;
   height?: number;
   media?: boolean;
+  css?: SerializedStyles;
 };
-const Thumbnail = ({ thumbnail, width = 1130, height = 500, media = false }: ThumbnailTypes) => {
-  const cssProps = {
-    media: css`
-      @media (max-width: 600px) {
-        display: none;
-      }
-    `,
-  };
+const Thumbnail = ({ thumbnail, width = 1130, height = 500, css: cssProps }: ThumbnailTypes) => {
   return (
     <>
       {thumbnail && (
-        <Box
+        <div
           css={css`
-            ${media && cssProps.media}
+            ${cssProps}
             display: flex;
             align-self: center;
+            /* min-width: ${width}px;
+            min-height: ${height}px; */
           `}
         >
           <Image
@@ -38,7 +33,7 @@ const Thumbnail = ({ thumbnail, width = 1130, height = 500, media = false }: Thu
             `}
             priority
           ></Image>
-        </Box>
+        </div>
       )}
     </>
   );
