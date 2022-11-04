@@ -15,7 +15,7 @@ posted: true
 
 # storybook 빌드 및 vercel로 배포하기
 
-![Build & Development Settings](/images/post/storybook-vercel-deploy/storybook-static-delploy.png)
+![Build & Development Settings](/images/post/storybook-static-delploy.png)
 
 ## static 파일 만들기
 
