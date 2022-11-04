@@ -9,6 +9,7 @@ tags:
   - react
   - useThree
 title: useThree
+thumbnail: '/images/thumbnail/react-three-fiber.webp'
 posted: true
 ---
 

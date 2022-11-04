@@ -10,6 +10,7 @@ tags:
   - emotion
   - error
 title: emotion css-props error
+thumbnail: '/images/thumbnail/emotion.png'
 posted: true
 ---
 

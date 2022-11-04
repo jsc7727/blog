@@ -10,6 +10,7 @@ tags:
   - line-clamp
   - mdn
 title: line-clamp
+thumbnail: '/images/thumbnail/css.png'
 posted: true
 ---
 

@@ -10,6 +10,7 @@ tags:
   - vercel
   - deploy
 title: 'Storybook vercel deploy'
+thumbnail: '/images/thumbnail/storybook.png'
 posted: true
 ---
 
