@@ -4,23 +4,24 @@ categories:
 date: '2022-11-03'
 readTime: '3'
 description: emotion css-props error
-slug: emotion-css-prop-error
+slug: emotion-css-props-error
 tags:
   - css-props
   - emotion
   - error
 title: emotion css-props error
+thumbnail: '/images/thumbnail/emotion.png'
 posted: true
 ---
 
-# css="You have tried to stringify object returned ~~~
+# 오류 You have tried to stringify object returned from css function.
 
 문제
 
 html 파일을 열어보면 아래와 같은 내용이 적혀있다.
 emotion css props를 사용할때 생기는 문제이다.
 
-```
+```text
 css="You have tried to stringify object returned from css function. It isn't supposed to be used directly (e.g. as value of the className prop), but rather handed to emotion so it can handle it (e.g. as value of css prop)."
 ```
 

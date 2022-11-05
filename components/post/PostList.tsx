@@ -1,7 +1,8 @@
-import { Box, css, Grow, Typography } from '@mui/material';
+import { Box, css, Grid, Grow, Stack, Typography } from '@mui/material';
 import { AttributesType } from 'common/frontMatter';
 import Link from 'next/link';
 import Tags from '../Tags';
+import Thumbnail from './Thumbnail';
 import Time from './Time';
 
 type PostListProps = {
@@ -39,24 +40,61 @@ const PostList = ({ title, postList }: PostListProps) => {
                 `}
               >
                 <Grow in={true} timeout={(idx + 1) * 300} unmountOnExit>
-                  <Box p={2} mt={2} mb={2} sx={{ border: 1, borderRadius: '15px' }} boxShadow={5}>
-                    <Typography variant="h4" component="h2">{`${e.title}`}</Typography>
-                    <Time date={e.date} readTime={e.readTime}></Time>
-                    <Typography
-                      variant="h6"
-                      component="h3"
+                  <Stack
+                    p={2}
+                    mt={2}
+                    mb={2}
+                    border={1}
+                    boxShadow={5}
+                    gap={3}
+                    css={css`
+                      border-radius: 15px;
+                      flex-direction: row;
+                      @media (max-width: 600px) {
+                        flex-direction: column;
+                        justify-content: center;
+                      }
+                    `}
+                  >
+                    <div
                       css={css`
-                        max-height: 70px;
-                        display: -webkit-box;
-                        -webkit-box-orient: vertical;
-                        -webkit-line-clamp: 2;
-                        overflow: hidden;
+                        display: flex;
+                        width: 200px;
+                        height: 150px;
+                        min-width: 200px;
+                        min-height: 150px;
+                        border-radius: 10px;
+                        align-self: center;
+                        @media (max-width: 600px) {
+                          align-content: center;
+                          overflow: hidden;
+                          width: 600px;
+                          height: 180px;
+                          max-width: 400px;
+                        }
                       `}
                     >
-                      {e.description}
-                    </Typography>
-                    <Tags tags={e.tags}></Tags>
-                  </Box>
+                      <Thumbnail width={600} height={450} thumbnail={e.thumbnail}></Thumbnail>
+                    </div>
+                    <Stack>
+                      <Typography variant="h4" component="h2">{`${e.title}`}</Typography>
+                      <Time date={e.date} readTime={e.readTime}></Time>
+                      <Typography
+                        variant="h6"
+                        component="h3"
+                        css={css`
+                          max-height: 70px;
+                          display: -webkit-box;
+                          -webkit-box-orient: vertical;
+                          -webkit-line-clamp: 1;
+                          overflow: hidden;
+                        `}
+                      >
+                        {e.description}
+                      </Typography>
+                      <Tags tags={e.tags}></Tags>
+                    </Stack>
+                  </Stack>
                 </Grow>
               </Box>
             </a>

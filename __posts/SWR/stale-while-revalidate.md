@@ -1,7 +1,7 @@
 ---
 categories:
   - SWR
-date: '2012-04-06'
+date: '2022-10-14'
 readTime: '10'
 description: stale-while-revalidate 란. 먼저 캐시(스태일)로부터 데이터를 반환한 후, fetch 요청(재검증)을 하고, 최종적으로 최신화된 데이터를 가져오는 전략
 slug: stale-while-revalidate
@@ -9,6 +9,7 @@ tags:
   - SWR
   - stale-while-revalidate
 title: stale-while-revalidate
+thumbnail: '/images/thumbnail/swr.png'
 posted: true
 ---
 

@@ -14,7 +14,7 @@ const Categories = ({ categories }: { categories: CategoryType }) => {
     >
       {Object.entries(categories).map(([category, count], idx) => {
         return (
-          <Grid key={category} item xs={12} sm={6} md={4} sx={{ flexBasis: { xs: 'auto' } }}>
+          <Grid key={category} item xs={12} sm={6} md={4} sx={{ flexBasis: 'auto' }}>
             <Link href={`/category/${category}`}>
               <Box
                 css={css`
@@ -27,7 +27,7 @@ const Categories = ({ categories }: { categories: CategoryType }) => {
                 <Grow in={true} timeout={(idx + 1) * 200}>
                   <Card
                     sx={{
-                      maxWidth: 345,
+                      maxWidth: 380,
                       ':hover': {
                         boxShadow: 6,
                       },
@@ -44,7 +44,7 @@ const Categories = ({ categories }: { categories: CategoryType }) => {
                       <Image
                         src={`/images/category/${category}.webp`}
                         alt={category}
-                        width={345}
+                        width={380}
                         height={200}
                         priority
                         css={css`

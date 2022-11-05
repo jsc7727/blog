@@ -9,6 +9,7 @@ tags:
   - css-props
   - emotion
 title: emotion css-props 가 뭐죠?
+thumbnail: '/images/thumbnail/emotion.png'
 posted: true
 ---
 

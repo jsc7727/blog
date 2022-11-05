@@ -6,6 +6,6 @@ type SideBarProps = {
 };
 
 const SideBar: NextPage<SideBarProps> = ({ tags }) => {
-  return <div>{tags && <Tags tags={tags}></Tags>}</div>;
+  return <Tags tags={tags}></Tags>;
 };
 export default SideBar;
