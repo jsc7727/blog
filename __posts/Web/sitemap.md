@@ -10,6 +10,7 @@ tags:
   - sitemap
   - SEO
 title: sitemap 이란?
+thumbnail: '/images/thumbnail/web.png'
 posted: true
 ---
 

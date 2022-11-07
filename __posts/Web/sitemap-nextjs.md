@@ -11,6 +11,7 @@ tags:
   - SEO
   - nextjs
 title: nextjs에서 sitemap을 적용하기
+thumbnail: '/images/thumbnail/web.png'
 posted: true
 ---
 
