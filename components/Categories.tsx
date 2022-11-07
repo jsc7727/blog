@@ -20,7 +20,7 @@ const Categories = ({ categories }: { categories: CategoryType }) => {
                 css={css`
                   &:hover {
                     transition-duration: 0.3s;
-                    transform: translate(-5px, -3px);
+                    transform: translate(-5px, -3px) scale(105%);
                   }
                 `}
               >

@@ -35,7 +35,7 @@ const PostList = ({ title, postList }: PostListProps) => {
                   &:hover {
                     cursor: pointer;
                     transition-duration: 0.15s;
-                    transform: translate(-5px, -3px);
+                    transform: translate(-5px, -3px) scale(102%);
                   }
                 `}
               >
@@ -68,7 +68,7 @@ const PostList = ({ title, postList }: PostListProps) => {
                         @media (max-width: 600px) {
                           align-content: center;
                           overflow: hidden;
-                          width: 600px;
+                          width: 100%;
                           height: 180px;
                           max-width: 400px;
                         }
