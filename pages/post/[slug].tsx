@@ -19,7 +19,7 @@ const PostPage: NextPage = () => {
         title={post?.attributes?.title}
         description={post?.attributes?.description}
         openGraph={{
-          url: `${url}/${slug}`,
+          url: `${url}/post/${slug}`,
           title: `${post?.attributes?.title}`,
           description: `${post?.attributes?.description}`,
           images: [

@@ -9,6 +9,6 @@ tags:
   - react
   - useFrame
 title: useFrame
-thumbnail: '/images/thumbnail/react-three-fiber.webp'
+thumbnail: '/images/thumbnail/react-three-fiber.jpg'
 posted: false
 ---
