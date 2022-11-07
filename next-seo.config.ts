@@ -23,10 +23,10 @@ const SEO = {
     images: [{ url: URL + '/images/MyFP.png' }],
     siteName: 'my-first-programming',
   },
-  twitter: {
-    handle: '@handle',
-    site: '@site',
-    cardType: 'summary_large_image',
-  },
+  // twitter: {
+  //   handle: '@handle',
+  //   site: '@site',
+  //   cardType: 'summary_large_image',
+  // },
 };
 export default SEO;

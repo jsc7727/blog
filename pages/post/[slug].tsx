@@ -32,7 +32,6 @@ const PostPage: NextPage = () => {
               type: 'image/jpeg',
             },
           ],
-          siteName: 'SiteName',
         }}
         twitter={{
           handle: '@handle',
