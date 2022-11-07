@@ -1,7 +1,6 @@
 import Layout from '@components/layout/Layout';
 import { css } from '@emotion/react';
 import { Stack, Typography } from '@mui/material';
-import { useEffect } from 'react';
 
 const Custom404 = () => {
   //   useEffect(() => {

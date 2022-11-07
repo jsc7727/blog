@@ -1,6 +1,6 @@
 import { alpha, Box, Card, css, Grow, InputBase, styled } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import { EffectCallback, useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import useGetPostsBySearchQuery from 'hooks/SWR/useGetPostsBySearchQuery';
 import { AttributesType } from '@common/frontMatter';
 import { useSWRConfig } from 'swr';

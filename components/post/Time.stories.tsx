@@ -2,7 +2,6 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Time from './Time';
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
 
 export default {
   title: 'Example/Time',

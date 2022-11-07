@@ -1,5 +1,4 @@
 import Rain from '@components/animation/Rain';
-import Snow from '@components/animation/Snow';
 import { Box, css, Stack } from '@mui/material';
 
 type LayoutProps = {

@@ -1,4 +1,3 @@
-import { css } from '@emotion/react';
 import { useUtterances } from 'hooks/useUtterances';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';

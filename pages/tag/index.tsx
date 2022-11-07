@@ -1,8 +1,7 @@
 import { GetStaticProps, NextPage } from 'next';
 import { getAllTags } from '@pages/api/getAllTags';
 import Tags from '@components/Tags';
-import layout from '@styles/layout.emotion';
-import { Box, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import Layout from '@components/layout/Layout';
 
 const tags: NextPage<{ tags: string[] }> = ({ tags }) => {

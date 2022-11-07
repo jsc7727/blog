@@ -5,7 +5,6 @@ import Content, { PostType } from '@components/post/Content';
 import useSWR, { unstable_serialize } from 'swr';
 import { getPost } from 'pages/api/getPost';
 import Utterances from '@components/comment/Utterances';
-import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Layout from '@components/layout/Layout';
 import { NextSeo } from 'next-seo';
