@@ -8,5 +8,6 @@ slug: import-최적화
 tags:
   - Web
 title: import 최적화
+thumbnail: '/images/thumbnail/web.png'
 posted: false
 ---

@@ -9,6 +9,7 @@ tags:
   - Web
   -
 title: state-관리
+thumbnail: '/images/thumbnail/web.png'
 posted: false
 ---
 

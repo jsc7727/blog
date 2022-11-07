@@ -8,7 +8,6 @@ export default class MyDocument extends Document {
     return (
       <Html lang="kr">
         <Head>
-          <meta name="description" content="IT TECH BLOG BY JUNIOR FRONT DEVELOPER JSC" />
           {/* PWA primary color */}
           {/* <meta name="theme-color" content={'black'} /> */}
 
@@ -29,7 +28,7 @@ export default class MyDocument extends Document {
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
 
-          <head dangerouslySetInnerHTML={{ __html: '<!-- BEGIN OPENGRAPH -->' }} />
+          {/* <head dangerouslySetInnerHTML={{ __html: '<!-- BEGIN OPENGRAPH -->' }} />
           <link rel="canonical" href="https://my-first-programming.kr" />
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://my-first-programming.kr" />
@@ -41,7 +40,7 @@ export default class MyDocument extends Document {
             content="https://t1.daumcdn.net/tistory_admin/static/images/openGraph/opengraph.png"
           />
           <meta property="og:article:author" content="jsc7727" />
-          <head dangerouslySetInnerHTML={{ __html: '<!-- BEGIN OPENGRAPH -->' }} />
+          <head dangerouslySetInnerHTML={{ __html: '<!-- BEGIN OPENGRAPH -->' }} /> */}
           {(this.props as any).emotionStyleTags}
         </Head>
         <body>

@@ -8,6 +8,7 @@ slug: Browser-rendering
 tags:
   - Web
 title: Browser-rendering
+thumbnail: '/images/thumbnail/web.png'
 posted: false
 ---
 
