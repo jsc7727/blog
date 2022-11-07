@@ -8,15 +8,38 @@ import Utterances from '@components/comment/Utterances';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Layout from '@components/layout/Layout';
+import { NextSeo } from 'next-seo';
 
 const PostPage: NextPage = () => {
   const { slug } = useRouter().query;
   const { data: post } = useSWR<PostType>(['post', slug]);
+  const url = process.env.NEXT_PUBLIC_URL || 'https://localhost:3000';
   return (
     <>
-      <Head>
-        <title>{post?.attributes?.title}</title>
-      </Head>
+      <NextSeo
+        title={post?.attributes?.title}
+        description={post?.attributes?.description}
+        openGraph={{
+          url: `${url}/${slug}`,
+          title: `${post?.attributes?.title}`,
+          description: `${post?.attributes?.description}`,
+          images: [
+            {
+              url: `${post?.attributes?.thumbnail}`,
+              width: 800,
+              height: 600,
+              alt: `${post?.attributes?.title}`,
+              type: 'image/jpeg',
+            },
+          ],
+          siteName: 'SiteName',
+        }}
+        twitter={{
+          handle: '@handle',
+          site: '@site',
+          cardType: 'summary_large_image',
+        }}
+      />
       <Layout>
         <Content></Content>
         <Utterances></Utterances>

@@ -9,6 +9,8 @@ import { PostType } from '@components/post/Content';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Transition from '@components/animation/Transition';
+import { DefaultSeo } from 'next-seo';
+import SEO from './../next-seo.config';
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -25,6 +27,7 @@ function MyApp({ Component, pageProps, emotionCache = clientSideEmotionCache }: 
       <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
+      <DefaultSeo {...SEO}></DefaultSeo>
       <PageProvider emotionCache={emotionCache}>
         <Header></Header>
         <Transition location={router.pathname}>
