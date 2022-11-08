@@ -11,6 +11,7 @@ import { useRouter } from 'next/router';
 import Transition from '@components/animation/Transition';
 import { DefaultSeo } from 'next-seo';
 import SEO from './../next-seo.config';
+import Footer from '@components/footer/Footer';
 
 const clientSideEmotionCache = createEmotionCache();
 

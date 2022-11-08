@@ -8,6 +8,7 @@ import Utterances from '@components/comment/Utterances';
 import { useRouter } from 'next/router';
 import Layout from '@components/layout/Layout';
 import { NextSeo } from 'next-seo';
+import Footer from '@components/footer/Footer';
 
 const PostPage: NextPage = () => {
   const { slug } = useRouter().query;
@@ -40,6 +41,7 @@ const PostPage: NextPage = () => {
       />
       <Layout>
         <Content></Content>
+        <Footer></Footer>
         <Utterances></Utterances>
       </Layout>
     </>
