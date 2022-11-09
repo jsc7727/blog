@@ -8,10 +8,14 @@ export default class MyDocument extends Document {
     return (
       <Html lang="kr">
         <Head>
-          {/* PWA primary color */}
-          {/* <meta name="theme-color" content={'black'} /> */}
+          <link rel="manifest" href="/manifest.json" />
 
-          <link rel="shortcut icon" href="https://my-first-programming.kr/favicon.ico" type="image/x-icon" />
+          <link href="/favicon/favicon-16x16.png" rel="icon" type="image/png" sizes="16x16" />
+          <link href="/favicon/favicon-32x32.png" rel="icon" type="image/png" sizes="32x32" />
+          <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png"></link>
+          <meta name="msapplication-TileColor" content="#000000"></meta>
+
+          <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
           <link rel="icon" href="/favicon.ico" type="image/x-icon" />
           <link
             rel="stylesheet"
@@ -28,19 +32,6 @@ export default class MyDocument extends Document {
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
 
-          {/* <head dangerouslySetInnerHTML={{ __html: '<!-- BEGIN OPENGRAPH -->' }} />
-          <link rel="canonical" href="https://my-first-programming.kr" />
-          <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://my-first-programming.kr" />
-          <meta property="og:site_name" content="Study For Programming" />
-          <meta property="og:title" content="Study For Programming" />
-          <meta property="og:description" content="IT TECH BLOG BY JUNIOR FRONT DEVELOPER JSC" />
-          <meta
-            property="og:image"
-            content="https://t1.daumcdn.net/tistory_admin/static/images/openGraph/opengraph.png"
-          />
-          <meta property="og:article:author" content="jsc7727" />
-          <head dangerouslySetInnerHTML={{ __html: '<!-- BEGIN OPENGRAPH -->' }} /> */}
           {(this.props as any).emotionStyleTags}
         </Head>
         <body>
