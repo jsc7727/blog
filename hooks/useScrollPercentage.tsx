@@ -21,7 +21,7 @@ export default function useScrollPercentage(tag = 'body') {
         setPercentage(
           (window.scrollY / (tabSelectorRef.current.scrollHeight - tabSelectorRef.current.offsetHeight)) * 100,
         );
-      }, 300),
+      }, 100),
     [isTabnavOn],
   );
 

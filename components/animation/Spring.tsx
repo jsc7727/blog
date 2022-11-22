@@ -1,7 +1,7 @@
 import { css, SerializedStyles } from '@emotion/react';
 import random from 'lodash/random';
 
-const Snow = ({ total = 200 }) => {
+const Spring = ({ total = 200 }) => {
   function random_range($min: number, $max: number) {
     const $rand = random();
     const $random_range = $min + Math.floor($rand * ($max - $min + 1));
@@ -63,4 +63,4 @@ const Snow = ({ total = 200 }) => {
   );
 };
 
-export default Snow;
+export default Spring;

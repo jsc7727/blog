@@ -26,7 +26,7 @@ const TopScrollPercentBar = () => {
               bottom: 0;
               left: 0;
               width: 100%;
-              transition: transform 330ms ease-in-out;
+              transition: transform 100ms ease-in-out;
               transform: translate(${percentage}%);
             }
           `}

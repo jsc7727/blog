@@ -81,7 +81,7 @@ export default Rain;
 
 const CssProps = {
   rain: css`
-    position: absolute;
+    position: fixed;
     left: 0;
     z-index: 0;
     width: 100%;

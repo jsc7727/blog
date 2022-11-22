@@ -1,3 +1,4 @@
+import Cloud from '@components/animation/Cloud';
 import Rain from '@components/animation/Rain';
 import Snow from '@components/animation/Snow';
 import { Box, css, Stack } from '@mui/material';
@@ -15,7 +16,8 @@ const Layout = ({ children }: LayoutProps) => {
       `}
     >
       {/* <Rain></Rain> */}
-      <Snow></Snow>
+      {/* <Snow></Snow> */}
+      {/* <Cloud></Cloud> */}
       <Stack
         maxWidth={1130}
         width={'100%'}

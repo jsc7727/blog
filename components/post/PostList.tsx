@@ -35,7 +35,7 @@ const PostList = ({ title, postList }: PostListProps) => {
                   &:hover {
                     cursor: pointer;
                     transition-duration: 0.15s;
-                    transform: translate(-5px, -3px) scale(102%);
+                    transform: scale(102%);
                   }
                 `}
               >
@@ -77,7 +77,17 @@ const PostList = ({ title, postList }: PostListProps) => {
                       <Thumbnail width={600} height={450} thumbnail={e.thumbnail}></Thumbnail>
                     </div>
                     <Stack>
-                      <Typography variant="h4" component="h2">{`${e.title}`}</Typography>
+                      <Typography
+                        variant="h4"
+                        component="h2"
+                        css={css`
+                          max-height: 70px;
+                          display: -webkit-box;
+                          -webkit-box-orient: vertical;
+                          -webkit-line-clamp: 1;
+                          overflow: hidden;
+                        `}
+                      >{`${e.title}`}</Typography>
                       <Time date={e.date} readTime={e.readTime}></Time>
                       <Typography
                         variant="h6"
