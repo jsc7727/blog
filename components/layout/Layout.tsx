@@ -16,7 +16,7 @@ const Layout = ({ children }: LayoutProps) => {
       `}
     >
       {/* <Rain></Rain> */}
-      {/* <Snow></Snow> */}
+      <Snow></Snow>
       {/* <Cloud></Cloud> */}
       <Stack
         maxWidth={1130}
