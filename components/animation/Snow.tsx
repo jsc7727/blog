@@ -43,6 +43,22 @@ const Snow = ({ total = 200 }) => {
         position: fixed;
         width: 100%;
         height: 100%;
+        @keyframes inOut {
+          0% {
+            opacity: 0;
+          }
+          20% {
+            opacity: 1;
+          }
+          80% {
+            opacity: 1;
+          }
+
+          100% {
+            opacity: 0;
+          }
+        }
+        animation: inOut 3s ease-in-out;
       `}
     >
       {snowCssArray.map((snowCss, idx) => {
