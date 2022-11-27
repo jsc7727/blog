@@ -1,3 +1,4 @@
+/** @jsxImportSource @emotion/react */
 import { css, SerializedStyles } from '@emotion/react';
 import { useTheme } from '@mui/material/styles';
 import random from 'lodash/random';

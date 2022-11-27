@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import { css } from '@emotion/react';
-import { useTheme } from '@mui/material/styles';
+import { Theme, useTheme } from '@mui/material/styles';
 import { useEffect, useMemo, useState } from 'react';
 type rainAttributeType = {
   randoFiver: number;
@@ -10,8 +10,7 @@ type rainAttributeType = {
   animationDuration: string;
 };
 
-export const RainComp = () => {
-  const theme = useTheme();
+export const RainComp = ({ theme }: { theme: Theme }) => {
   console.log(theme, theme.palette.primary.main);
   const rainAttributes: rainAttributeType[] = useMemo(() => {
     let count = 0;
@@ -49,7 +48,6 @@ export const RainComp = () => {
                 ${CssProps.stem}
                 animation-delay: ${animationDelay}s;
                 animation-duration: ${animationDuration}s;
-                /* background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25)); */
                 background: linear-gradient(
                   to bottom,
                   ${theme.palette.secondary.main},
@@ -62,7 +60,6 @@ export const RainComp = () => {
                 ${CssProps.splat}
                 animation-delay: ${animationDelay}s;
                 animation-duration: ${animationDuration}s;
-                /* border-top: 2px dotted {rgba(255, 255, 255, 0.5)}; */
                 border-top: 3px dotted ${theme.palette.primary.main};
               `}
             ></div>
@@ -77,13 +74,14 @@ RainComp.displayName = 'RainComp';
 
 const Rain = () => {
   const [mounted, setMounted] = useState(false);
+  const theme = useTheme();
   useEffect(() => {
     setMounted(true);
   }, []);
   if (mounted === false) return <div></div>;
   return (
     <>
-      <RainComp></RainComp>
+      <RainComp theme={theme}></RainComp>
     </>
   );
 };
@@ -125,7 +123,6 @@ const CssProps = {
     height: 60%;
     z-index: 0;
     margin-left: 7px;
-    /* background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25)); */
     animation: _stem 0.5s linear infinite;
     @keyframes _stem {
       0% {
@@ -150,7 +147,6 @@ const CssProps = {
     z-index: 0;
     width: 15px;
     height: 10px;
-    /* border-top: 2px dotted rgba(255, 255, 255, 0.5); */
     border-radius: 50%;
     opacity: 1;
     transform: scale(0);
