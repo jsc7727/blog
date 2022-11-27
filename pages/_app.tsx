@@ -12,8 +12,6 @@ import Transition from '@components/animation/Transition';
 import { DefaultSeo } from 'next-seo';
 import SEO from './../next-seo.config';
 import Footer from '@components/footer/Footer';
-import useGps from 'hooks/useGps';
-import useWeather from 'hooks/useWeather';
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -24,8 +22,6 @@ interface MyAppProps extends AppProps<{ fallback: fallbackType }> {
 
 function MyApp({ Component, pageProps, emotionCache = clientSideEmotionCache }: MyAppProps) {
   const router = useRouter();
-  // const { coords } = useGps();
-  // const { weather } = useWeather(coords);
   return (
     <>
       <div id="portal" />

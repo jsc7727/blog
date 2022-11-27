@@ -19,6 +19,7 @@
     "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.9",
     "axios": "^1.1.2",
+    "cross-env": "^7.0.3",
     "front-matter": "^4.0.2",
     "highlight.js": "^11.6.0",
     "lodash": "^4.17.21",
