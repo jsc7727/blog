@@ -35,3 +35,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+# pwa 생성 파일
+workbox-*.js
+workbox-*.map
+sw.js
+sw.js.map

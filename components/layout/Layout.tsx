@@ -9,16 +9,16 @@ type LayoutProps = {
 };
 
 const Weather = () => {
-  const [weatherIdx, setWeatherIdx] = useState(1);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setWeatherIdx((prev) => (prev === 1 ? 0 : 1));
-    }, 3000);
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
-  const weatherList = [<Rain key={1} />, <Snow key={2} />];
+  // const [weatherIdx, setWeatherIdx] = useState(1);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setWeatherIdx((prev) => (prev === 1 ? 0 : 1));
+  //   }, 3000);
+  //   return () => {
+  //     clearInterval(interval);
+  //   };
+  // }, []);
+  // const weatherList = [<Rain key={1} />, <Snow key={2} />];
   return (
     <>
       {/* {weatherList[weatherIdx]} */}

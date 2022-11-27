@@ -24,8 +24,8 @@ interface MyAppProps extends AppProps<{ fallback: fallbackType }> {
 
 function MyApp({ Component, pageProps, emotionCache = clientSideEmotionCache }: MyAppProps) {
   const router = useRouter();
-  const { coords } = useGps();
-  const { weather } = useWeather(coords);
+  // const { coords } = useGps();
+  // const { weather } = useWeather(coords);
   return (
     <>
       <div id="portal" />
