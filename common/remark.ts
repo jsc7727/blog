@@ -31,7 +31,5 @@ export const markdownParser = async (mdText: string) => {
       .process(mdText)
   ).toString();
 
-  console.log('asdf');
-  console.log(res);
   return res;
 };
