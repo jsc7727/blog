@@ -1,7 +1,10 @@
 import { css, SerializedStyles } from '@emotion/react';
+import { useTheme } from '@mui/material/styles';
 import random from 'lodash/random';
 
 const Snow = ({ total = 200 }) => {
+  const theme = useTheme();
+
   function random_range($min: number, $max: number) {
     const $rand = random();
     const $random_range = $min + Math.floor($rand * ($max - $min + 1));
@@ -39,7 +42,7 @@ const Snow = ({ total = 200 }) => {
     <div
       css={css`
         overflow: hidden;
-        filter: drop-shadow(0 0 10px white);
+        filter: ${`drop-shadow(0 0 10px ${theme.palette.primary.main})`};
         position: fixed;
         width: 100%;
         height: 100%;
@@ -69,7 +72,7 @@ const Snow = ({ total = 200 }) => {
               ${snowCss}
               width:10px;
               height: 10px;
-              background: white;
+              background: ${theme.palette.primary.main};
               border-radius: 50%;
             `}
           ></div>

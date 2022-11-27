@@ -1,13 +1,27 @@
 import { PaletteOptions, createTheme, css } from '@mui/material/styles';
 
-export type AllowedTheme = NonNullable<PaletteOptions['mode']>;
+// export type AllowedTheme = NonNullable<PaletteOptions['mode']>;
 
-export const DEFAULT_THEME: AllowedTheme = 'light';
+// export const DEFAULT_THEME: AllowedTheme = 'light';
+
+declare module '@mui/material/styles' {
+  interface Palette {
+    customRainColor: Palette['primary'];
+  }
+
+  // allow configuration using `createTheme`
+  interface PaletteOptions {
+    customRainColor?: PaletteOptions['primary'];
+  }
+}
 
 export const lightTheme = createTheme({
   palette: {
     primary: { main: '#121212' },
     secondary: { main: '#ffffff' },
+    customRainColor: {
+      main: 'rgb(0,0,0,0.25)',
+    },
     mode: 'light',
   },
   typography: {
@@ -17,9 +31,12 @@ export const lightTheme = createTheme({
 
 export const darkTheme = createTheme({
   palette: {
-    primary: { main: '#121212' },
-    secondary: { main: '#000000' },
+    primary: { main: '#ffffff' },
+    secondary: { main: '#121212' },
     // text: { primary: '#ff4b22' },
+    customRainColor: {
+      main: 'rgb(255,255,255,0.25)',
+    },
     mode: 'dark',
   },
   typography: {
