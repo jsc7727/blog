@@ -5,12 +5,12 @@ import rehypeFormat from 'rehype-format';
 import rehypeStringify from 'rehype-stringify';
 import rehypeHighlight from 'rehype-highlight';
 import remarkGfm from 'remark-gfm';
-import rehypeReact from 'rehype-react';
 import rehypeRaw from 'rehype-raw';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import toc from '@jsdevtools/rehype-toc';
 
+// import rehypeReact from 'rehype-react';
 // import rehypeSanitize from 'rehype-sanitize';
 
 export const markdownParser = async (mdText: string) => {
