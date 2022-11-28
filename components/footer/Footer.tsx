@@ -1,5 +1,5 @@
 import { Avatar, Box, css, Typography } from '@mui/material';
-import { deepOrange } from '@mui/material/colors';
+// import { deepOrange } from '@mui/material/colors';
 
 const CrossBorder = () => {
   return (

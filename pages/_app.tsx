@@ -1,4 +1,4 @@
-import { EmotionCache } from '@emotion/react';
+import { css, EmotionCache } from '@emotion/react';
 import '@common/axios';
 import createEmotionCache from '@assets/theme/createEmotionCache';
 import PageProvider from '@components/helpers/PageProvider';
@@ -11,9 +11,9 @@ import { useRouter } from 'next/router';
 import Transition from '@components/animation/Transition';
 import { DefaultSeo } from 'next-seo';
 import SEO from './../next-seo.config';
-import Footer from '@components/footer/Footer';
-import useGps from 'hooks/useGps';
-import useWeather from 'hooks/useWeather';
+// import Footer from '@components/footer/Footer';
+import { RecoilRoot } from 'recoil';
+import Weather from '@components/Weather';
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -24,8 +24,6 @@ interface MyAppProps extends AppProps<{ fallback: fallbackType }> {
 
 function MyApp({ Component, pageProps, emotionCache = clientSideEmotionCache }: MyAppProps) {
   const router = useRouter();
-  const { coords } = useGps();
-  const { weather } = useWeather(coords);
   return (
     <>
       <div id="portal" />
@@ -34,12 +32,15 @@ function MyApp({ Component, pageProps, emotionCache = clientSideEmotionCache }: 
       </Head>
       <DefaultSeo {...SEO}></DefaultSeo>
       <PageProvider emotionCache={emotionCache}>
-        <Header></Header>
-        <Transition location={router.pathname}>
-          <SWRConfig value={{ fallback: pageProps.fallback }}>
-            <Component {...pageProps} />
-          </SWRConfig>
-        </Transition>
+        <RecoilRoot>
+          <Weather></Weather>
+          <Header></Header>
+          <Transition location={router.pathname}>
+            <SWRConfig value={{ fallback: pageProps.fallback }}>
+              <Component {...pageProps} />
+            </SWRConfig>
+          </Transition>
+        </RecoilRoot>
       </PageProvider>
     </>
   );

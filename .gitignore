@@ -37,5 +37,9 @@ yarn-error.log*
 next-env.d.ts
 
 workbox-*ac.js
+
+# pwa 생성 파일
+workbox-*.js
+workbox-*.map
 sw.js
 sw.js.map

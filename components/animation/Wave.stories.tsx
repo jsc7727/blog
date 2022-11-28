@@ -1,14 +1,14 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Autumn from './Autumn';
+import Wave from './Wave';
 export default {
-  title: 'Example/Autumn',
-  component: Autumn,
+  title: 'Example/Wave',
+  component: Wave,
   parameters: {
     layout: 'fullscreen',
   },
-} as ComponentMeta<typeof Autumn>;
+} as ComponentMeta<typeof Wave>;
 
-const Template: ComponentStory<typeof Autumn> = () => <Autumn />;
+const Template: ComponentStory<typeof Wave> = () => <Wave />;
 
 export const Primary = Template.bind({});
