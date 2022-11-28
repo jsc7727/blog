@@ -21,6 +21,7 @@ export const lightTheme = createTheme({
     secondary: { main: '#ffffff' },
     customRainColor: {
       main: 'rgb(0,0,0,0.25)',
+      dark: 'rgb(255,255,255,0.25)',
     },
     mode: 'light',
   },
@@ -35,7 +36,8 @@ export const darkTheme = createTheme({
     secondary: { main: '#121212' },
     // text: { primary: '#ff4b22' },
     customRainColor: {
-      main: 'rgb(255,255,255,0.25)',
+      main: 'rgb(255,255,255,0.3)',
+      dark: 'rgb(0,0,0,0.3)',
     },
     mode: 'dark',
   },

@@ -1,10 +1,11 @@
-import { Box, css, Stack } from '@mui/material';
+import { Box, css, Stack, useTheme } from '@mui/material';
 
 type LayoutProps = {
   children: React.ReactElement | React.ReactElement[];
 };
 
 const Layout = ({ children }: LayoutProps) => {
+  const theme = useTheme();
   return (
     <Box
       css={css`
@@ -12,6 +13,20 @@ const Layout = ({ children }: LayoutProps) => {
         justify-content: center;
       `}
     >
+      <Stack
+        maxWidth={1130}
+        width={'100%'}
+        alignContent="center"
+        css={css`
+          width: 1130px;
+          height: 100%;
+          position: fixed;
+          margin: 10px;
+          border-radius: 15px;
+          background-color: ${theme.palette.customRainColor.dark};
+          filter: blur(2px);
+        `}
+      ></Stack>
       <Stack
         maxWidth={1130}
         width={'100%'}
