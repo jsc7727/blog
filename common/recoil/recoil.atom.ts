@@ -18,13 +18,15 @@ import { atom, selector } from 'recoil';
 //   set: ({ set }) => set(countState, (currCount) => currCount + 1),
 // });
 
-export const weatherState = atom<string>({
-  key: 'weather',
-  default: '',
+type weatherType = { id: number; main: string; description: string; icon: string };
+
+export const WeatherState = atom<weatherType | null>({
+  key: 'keyWeatherState',
+  default: null,
 });
 
-export const weatherSelector = selector({
-  key: 'weatherState',
-  get: ({ get }) => get(weatherState),
-  set: ({ set }, newValue) => set(weatherState, newValue),
+export const WeatherSelector = selector({
+  key: 'keyWeatherSelector',
+  get: ({ get }) => get(WeatherState),
+  set: ({ set }, newValue) => set(WeatherState, newValue),
 });

@@ -2,42 +2,69 @@
 import { css } from '@emotion/react';
 
 const Cloud = () => {
+  const cloudList = [
+    {
+      url: '/images/clouds_1.webp',
+      width: '1000px',
+      duration: '10s',
+    },
+    {
+      url: '/images/clouds_2.webp',
+      width: '1000px',
+      duration: '15s',
+    },
+    {
+      url: '/images/clouds_3.webp',
+      width: '1579px',
+      duration: '17s',
+    },
+  ];
   return (
-    <svg
-      id="inner"
-      width="100%"
-      height="100%"
+    <div
       css={css`
-        z-index: 300;
+        background(linear-gradient(#333333, #000000));
+        z-index:10;
       `}
     >
-      <g id="cloud3" className="cloud" transform="matrix(1,0,0,1,215.4086,0)">
-        <path d="M-300,0C-300,0,300,0,300,0C500,53.33333333333333,500,106.66666666666666,300,160C200,201.44810194343563,100,201.44810194343563,0,160C-100,201.44810194343563,-200,201.44810194343563,-300,160C-500,106.66666666666666,-500,53.33333333333333,-300,0"></path>
-      </g>
-      <g id="cloud2" className="cloud" transform="matrix(1,0,0,1,173.5303,0)">
-        <path d="M-300,0C-300,0,300,0,300,0C500,43.33333333333333,500,86.66666666666666,300,130C200,175.35157824676838,100,175.35157824676838,0,130C-100,175.35157824676838,-200,175.35157824676838,-300,130C-500,86.66666666666666,-500,43.33333333333333,-300,0"></path>
-      </g>
+      <div
+        css={css`
+        opacity 0.4;
+        pointer-events: none;
+        position: fixed;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+      `}
+      >
+        {cloudList.map(({ url, width, duration }) => {
+          return (
+            <div
+              key={url}
+              css={css`
+                background-repeat: repeat-x;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                /* bottom: 0; */
+                height: 500px;
+                opacity: 0.4;
+                background-image: ${`url(${url})`};
+                animation: clouds-loop ${duration} infinite linear;
 
-      <g id="cloud1" className="cloud" transform="matrix(1,0,0,1,289.2962,0)">
-        <path d="M-300,0C-300,0,300,0,300,0C500,33.33333333333333,500,66.66666666666666,300,100C200,150.18438674365305,100,150.18438674365305,0,100C-100,150.18438674365305,-200,150.18438674365305,-300,100C-500,66.66666666666666,-500,33.33333333333333,-300,0"></path>
-      </g>
-      <desc>Created with Snap</desc>
-    </svg>
-    // <div
-    //   css={css`
-    //     /* z-index: 100; */
-    //     /* width: 1000px; */
-    //     /* height: 100px; */
-    //     /* transform-origin: 0px 0px; */
-    //     /* fill: white; */
-    //     clip-path: path(
-    //       'M-300,0C-300,0,300,0,300,0C500,53.33333333333333,500,106.66666666666666,300,160C200,223.63474957159116,100,223.63474957159116,0,160C-100,223.63474957159116,-200,223.63474957159116,-300,160C-500,106.66666666666666,-500,53.33333333333333,-300,0'
-    //     );
-    //   `}
-    //   //   id="cloud"
-    //   //   className="cloud"
-    //   //   transform="matrix(1,0,0,1,121.8155,0)"
-    // ></div>
+                @keyframes clouds-loop {
+                  to {
+                    background-position: -${width} 0;
+                  }
+                }
+              `}
+            ></div>
+          );
+        })}
+      </div>
+    </div>
   );
 };
 

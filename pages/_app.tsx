@@ -11,7 +11,9 @@ import { useRouter } from 'next/router';
 import Transition from '@components/animation/Transition';
 import { DefaultSeo } from 'next-seo';
 import SEO from './../next-seo.config';
-import Footer from '@components/footer/Footer';
+// import Footer from '@components/footer/Footer';
+import { RecoilRoot } from 'recoil';
+import Weather from '@components/Weather';
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -30,12 +32,15 @@ function MyApp({ Component, pageProps, emotionCache = clientSideEmotionCache }: 
       </Head>
       <DefaultSeo {...SEO}></DefaultSeo>
       <PageProvider emotionCache={emotionCache}>
-        <Header></Header>
-        <Transition location={router.pathname}>
-          <SWRConfig value={{ fallback: pageProps.fallback }}>
-            <Component {...pageProps} />
-          </SWRConfig>
-        </Transition>
+        <RecoilRoot>
+          <Weather></Weather>
+          <Header></Header>
+          <Transition location={router.pathname}>
+            <SWRConfig value={{ fallback: pageProps.fallback }}>
+              <Component {...pageProps} />
+            </SWRConfig>
+          </Transition>
+        </RecoilRoot>
       </PageProvider>
     </>
   );

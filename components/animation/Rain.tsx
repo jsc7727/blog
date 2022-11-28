@@ -11,7 +11,6 @@ type rainAttributeType = {
 };
 
 export const RainComp = ({ theme }: { theme: Theme }) => {
-  console.log(theme, theme.palette.primary.main);
   const rainAttributes: rainAttributeType[] = useMemo(() => {
     let count = 0;
     return new Array(30).fill(null).map(() => {
@@ -111,10 +110,10 @@ const CssProps = {
         transform: translateY(0vh);
       }
       75% {
-        transform: translateY(90vh);
+        transform: translateY(98vh);
       }
       100% {
-        transform: translateY(90vh);
+        transform: translateY(98vh);
       }
     }
   `,

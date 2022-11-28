@@ -3,7 +3,7 @@ import { css, SerializedStyles } from '@emotion/react';
 import { useTheme } from '@mui/material/styles';
 import random from 'lodash/random';
 
-const Snow = ({ total = 200 }) => {
+const Snow = ({ total = 150 }) => {
   const theme = useTheme();
 
   function random_range($min: number, $max: number) {

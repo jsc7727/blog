@@ -1,6 +1,5 @@
 import { css, Grid, Stack, Typography } from '@mui/material';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
-import Layout from '@components/layout/Layout';
 
 type SearchCardProps = {
   category: string;

@@ -18,7 +18,18 @@ const getTransitionStyles = {
     transition: opacity ${TIMEOUT}ms ease-in-out, transform ${TIMEOUT}ms ease-in-out;
     opacity: 1;
     transform: translateX(0px);
-    animation: blink 0.3s linear 2;
+    @keyframe blink {
+      from {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    animation: blink 10.3s linear 2;
   `,
   exiting: css`
     transition: opacity ${TIMEOUT}ms ease-in-out, transform ${TIMEOUT}ms ease-in-out;
