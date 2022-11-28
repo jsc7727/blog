@@ -35,7 +35,6 @@ const Wave = () => {
       <div
         css={css`
           background: url(/images/wave.svg) repeat-x;
-
           fill: #e95f34;
           position: absolute;
           top: -198px;

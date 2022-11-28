@@ -8,6 +8,7 @@ import useWeather from 'hooks/useWeather';
 import { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 import Mist from './animation/Mist';
+import Transition from './animation/Transition';
 
 const Weather = () => {
   const { coords } = useGps();
@@ -31,6 +32,7 @@ const Weather = () => {
   // const weatherList = [<Rain key={1} />, <Snow key={2} />];
   return (
     <>
+      <Transition location={weatherRecoilState}></Transition>
       {/* {weatherList[weatherIdx]} */}
       {/* <Rain></Rain> */}
       <Snow></Snow>

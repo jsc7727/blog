@@ -11,6 +11,7 @@ const Layout = ({ children }: LayoutProps) => {
       css={css`
         display: flex;
         justify-content: center;
+        margin: 30px;
       `}
     >
       <Stack
@@ -18,13 +19,14 @@ const Layout = ({ children }: LayoutProps) => {
         width={'100%'}
         alignContent="center"
         css={css`
-          width: 1130px;
+          max-width: 1130px;
+          width: 100%;
           height: 100%;
           position: fixed;
-          margin: 10px;
           border-radius: 15px;
           background-color: ${theme.palette.customRainColor.dark};
-          filter: blur(2px);
+          backdrop-filter: saturate(180%) blur(20px);
+          overflow: hidden;
         `}
       ></Stack>
       <Stack
