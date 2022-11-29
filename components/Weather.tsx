@@ -35,8 +35,8 @@ const Weather = () => {
       {/* <Transition location={weatherRecoilState}></Transition> */}
       {/* {weatherList[weatherIdx]} */}
       {/* <Rain></Rain> */}
-      <Snow></Snow>
-      <Wave></Wave>
+      {/* <Snow></Snow>
+      <Wave></Wave> */}
       {/* <Cloud></Cloud> */}
       {/* <Mist></Mist> */}
     </>
