@@ -23,14 +23,12 @@ export default class MyDocument extends Document {
           />
 
           <link
-            rel="stylesheet"
-            as="style"
-            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css"
-          />
-
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
+            rel="preload"
+            href="/fonts/Pretendard/woff2/Pretendard-Regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          ></link>
 
           {(this.props as any).emotionStyleTags}
         </Head>

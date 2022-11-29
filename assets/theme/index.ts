@@ -124,4 +124,12 @@ export const globalStyles = css`
       /* color: #fff; */
     }
   }
+
+  @font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-display: swap;
+    src: local('Pretendard Regular'), url('/fonts/Pretendard/woff2/Pretendard-Regular.woff2') format('woff2'),
+      url('/fonts/Pretendard/woff2/Pretendard-Regular.woff2') format('woff');
+  }
 `;
