@@ -1,8 +1,4 @@
-import { PaletteOptions, createTheme, css } from '@mui/material/styles';
-
-// export type AllowedTheme = NonNullable<PaletteOptions['mode']>;
-
-// export const DEFAULT_THEME: AllowedTheme = 'light';
+import { createTheme, css } from '@mui/material/styles';
 
 declare module '@mui/material/styles' {
   interface Palette {

@@ -9,6 +9,6 @@ export default {
   },
 } as ComponentMeta<typeof Wave>;
 
-const Template: ComponentStory<typeof Wave> = () => <Wave />;
+const Template: ComponentStory<typeof Wave> = () => <Wave isMobile={false} />;
 
 export const Primary = Template.bind({});

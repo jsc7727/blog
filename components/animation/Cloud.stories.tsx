@@ -9,6 +9,6 @@ export default {
   },
 } as ComponentMeta<typeof Cloud>;
 
-const Template: ComponentStory<typeof Cloud> = () => <Cloud />;
+const Template: ComponentStory<typeof Cloud> = () => <Cloud isMobile={false} />;
 
 export const Primary = Template.bind({});

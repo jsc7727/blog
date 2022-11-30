@@ -32,7 +32,7 @@ const Header = () => {
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 fontSize: '1.5rem',
-                fontWeight: '700',
+                fontWeight: '600',
               }}
               css={css`
                 /* animation: typewriter 4s steps(44) 1s 1 normal both, blinkTextCursor 500ms steps(44) infinite normal;

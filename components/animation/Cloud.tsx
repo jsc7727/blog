@@ -1,11 +1,16 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 
-const Cloud = () => {
+type CloudPropsType = {
+  isMobile: boolean;
+};
+
+const Cloud = ({ isMobile }: CloudPropsType) => {
+  if (isMobile === true) return <></>;
   const cloudList = [
     {
       url: '/images/clouds_1.webp',
-      width: '1000px',
+      width: '1200px',
       duration: '10s',
     },
     {

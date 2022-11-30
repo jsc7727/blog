@@ -2,9 +2,9 @@ import { ClimbingBoxLoader } from 'react-spinners';
 import { css } from '@emotion/react';
 
 const override = css`
-  display: block;
-  margin: 0 auto;
-  border-color: red;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: saturate(180%) blur(20px);
 `;
 
 const Loading = () => {

@@ -9,6 +9,6 @@ export default {
   },
 } as ComponentMeta<typeof Mist>;
 
-const Template: ComponentStory<typeof Mist> = () => <Mist />;
+const Template: ComponentStory<typeof Mist> = () => <Mist isMobile={false} />;
 
 export const Primary = Template.bind({});

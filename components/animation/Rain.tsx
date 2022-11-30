@@ -71,13 +71,17 @@ export const RainComp = ({ theme }: { theme: Theme }) => {
 
 RainComp.displayName = 'RainComp';
 
-const Rain = () => {
+type RainPropsType = {
+  isMobile: boolean;
+};
+
+const Rain = ({ isMobile }: RainPropsType) => {
   const [mounted, setMounted] = useState(false);
   const theme = useTheme();
   useEffect(() => {
     setMounted(true);
   }, []);
-  if (mounted === false) return <div></div>;
+  if (mounted === false || isMobile === true) return <></>;
   return (
     <>
       <RainComp theme={theme}></RainComp>

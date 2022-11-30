@@ -9,6 +9,6 @@ export default {
   },
 } as ComponentMeta<typeof Snow>;
 
-const Template: ComponentStory<typeof Snow> = () => <Snow />;
+const Template: ComponentStory<typeof Snow> = () => <Snow isMobile={false} />;
 
 export const Primary = Template.bind({});

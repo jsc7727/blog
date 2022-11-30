@@ -1,7 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 
-const Mist = () => {
+type MistPropsType = {
+  isMobile: boolean;
+};
+
+const Mist = ({ isMobile }: MistPropsType) => {
   const mistList = [
     '/images/animation/fog1.webp',
     '/images/animation/fog2.webp',
@@ -14,6 +18,7 @@ const Mist = () => {
     '/images/animation/fog4.webp',
     '/images/animation/fog5.webp',
   ];
+  if (isMobile === true) return <></>;
   return (
     <div
       css={css`
