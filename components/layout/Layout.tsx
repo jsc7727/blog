@@ -24,8 +24,8 @@ const Layout = ({ children }: LayoutProps) => {
           height: 100%;
           position: fixed;
           border-radius: 15px;
-          background-color: ${theme.palette.customRainColor.dark};
-          backdrop-filter: saturate(180%) blur(20px);
+          background: ${theme.palette.customRainColor.dark};
+          backdrop-filter: blur(20px);
           overflow: hidden;
         `}
       ></Stack>

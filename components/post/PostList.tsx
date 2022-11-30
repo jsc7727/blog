@@ -32,13 +32,34 @@ const PostList = ({ title, postList }: PostListProps) => {
             <a>
               <Box
                 css={css`
+                  display: flex;
+                  align-items: center;
+                  position: relative;
+                  overflow: hidden;
                   &:hover {
                     cursor: pointer;
                     transition-duration: 0.15s;
-                    transform: scale(102%);
+                    & > .hoverBar {
+                      transform: translate(0px, 0px);
+                      transition-duration: 0.2s;
+                    }
+                    color: gray;
                   }
                 `}
               >
+                <Stack
+                  className="hoverBar"
+                  css={css`
+                    height: 150px;
+                    width: 10px;
+                    position: absolute;
+                    left: 2px;
+                    background: #fe5820;
+                    transform: translate(-15px, 0);
+                    transition-duration: 0.2s;
+                    border-radius: 15px;
+                  `}
+                ></Stack>
                 <Grow in={true} timeout={(idx + 1) * 300} unmountOnExit>
                   <Stack
                     p={2}
@@ -48,6 +69,7 @@ const PostList = ({ title, postList }: PostListProps) => {
                     boxShadow={5}
                     gap={3}
                     css={css`
+                      width: 100%;
                       border-radius: 15px;
                       flex-direction: row;
                       @media (max-width: 600px) {

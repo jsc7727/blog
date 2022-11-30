@@ -4,7 +4,7 @@ import { css } from '@emotion/react';
 const override = css`
   width: 100%;
   height: 100%;
-  backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: blur(20px);
 `;
 
 const Loading = () => {

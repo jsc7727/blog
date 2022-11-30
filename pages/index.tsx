@@ -36,7 +36,7 @@ const Home: NextPage<HomeProps> = ({ tags, categories, postList }) => {
           <Categories categories={categories}></Categories>
         </Box>
         <Stack sx={{ flexDirection: { xs: 'column', md: 'row-reverse' } }}>
-          <Box p={2} sx={{ width: { md: '30%' } }}>
+          <Box p={2} sx={{ width: { md: '30%' }, maxHeight: '720px' }}>
             <Typography
               p={2}
               variant="h2"
