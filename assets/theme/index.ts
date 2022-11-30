@@ -1,4 +1,5 @@
 import { createTheme, css } from '@mui/material/styles';
+import 'highlight.js/styles/github-dark.css';
 
 declare module '@mui/material/styles' {
   interface Palette {
