@@ -9,7 +9,7 @@ import { useRouter } from 'next/router';
 import Layout from '@components/layout/Layout';
 import { NextSeo } from 'next-seo';
 import Footer from '@components/footer/Footer';
-import Script from 'next/script';
+import 'highlight.js/styles/github-dark.css';
 
 const PostPage: NextPage = () => {
   const { slug } = useRouter().query;
