@@ -40,7 +40,7 @@ const PostList = ({ title, postList }: PostListProps) => {
                     cursor: pointer;
                     transition-duration: 0.15s;
                     & > .hoverBar {
-                      transform: translate(0px, 0px);
+                      transform: translate(-20px, 0px);
                       transition-duration: 0.2s;
                     }
                     color: gray;
@@ -51,13 +51,17 @@ const PostList = ({ title, postList }: PostListProps) => {
                   className="hoverBar"
                   css={css`
                     height: 150px;
-                    width: 10px;
+                    width: 30px;
                     position: absolute;
                     left: 2px;
                     background: #fe5820;
-                    transform: translate(-15px, 0);
+                    transform: translate(-30px, 0);
                     transition-duration: 0.2s;
                     border-radius: 15px;
+
+                    @media (max-width: 700px) {
+                      height: 350px;
+                    }
                   `}
                 ></Stack>
                 <Grow in={true} timeout={(idx + 1) * 300} unmountOnExit>
