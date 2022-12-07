@@ -86,21 +86,16 @@ export const globalStyles = css`
     width: 100%;
     *::-webkit-scrollbar {
       cursor: pointer;
-      /* z-index: 100; */
-      width: 10px;
+      width: 6px;
       height: 10px;
     }
 
     *::-webkit-scrollbar-thumb {
-      /* z-index: 100; */
       background: #ff4b22;
-      border-radius: 10px;
     }
 
     *::-webkit-scrollbar-track {
-      /* z-index: 100; */
       background: gray;
-      border-radius: 10px;
     }
   }
 
@@ -114,7 +109,6 @@ export const globalStyles = css`
   [data-theme='dark'] {
     body {
       /* background: linear-gradient(#123 30%, #667); */
-      /* height: 100%; */
       /* background: #121212; */
       /* background: red; */
       /* color: #fff; */
