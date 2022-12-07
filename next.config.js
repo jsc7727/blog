@@ -13,6 +13,7 @@ const nextConfig = {
 };
 
 console.log('NODE_ENV : ', process.env.NODE_ENV);
+
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const runtimeCaching = require('next-pwa/cache');
 // eslint-disable-next-line @typescript-eslint/no-var-requires
