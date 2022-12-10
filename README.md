@@ -1,16 +1,20 @@
 # [deplay](https://my-first-programming.kr)
 
-1. 화면전환시 애니메이션 (라이브러리 or 구현)
-2. 검색 관련 css 애니메이션
-3. 포트폴리오 페이지
-4. about me 페이지
-5. contact 버튼
+## 기술 스택
 
-- 계절별 배경
+1. react
+2. nextjs
+3. MUI, emotion
+4. recoil
+5. react-spring
+6. SWR
+7. lodash
+    - throttle 을 통한 상단 바 최적화
+    - debounce 를 통한 검색 input 최적화
 
-  - 봄, 여름, 가을, 겨울
-
-- 비내리는 아침 - 태양
-- 비내리는 밤 - 달
-- 태양 + 구름
-- 달 + 구름
+## 기능
+1. unified를 통한 markdown 문서로 포스트 게재 기능
+2. PWA / next-pwa 라이브러리를 통한 PWA 배포
+3. SEO / next-seo 라이브러리를 사용하여 og태그를 포함한 기타 매타 태그를 적용하였으며, 카카오톡, 텔레그램 등 에서 웹링크 미리보기 기능 작동 확인.
+4. utteranc를 통한 댓글 관리
+5. 검색 기능
