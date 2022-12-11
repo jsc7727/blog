@@ -20,3 +20,5 @@
 5. 검색 기능
 6. 현재 위치정보를 기반으로 날씨 api를 사용하여 현재 위치에 날씨에 맞는 animation을 보여줌
    - [storybook](https://storybook.my-first-programming.kr)현재 구름, 비, 눈, 안개, 맑음 사용 가능
+
+![페이지 스피드 인사이트](https://user-images.githubusercontent.com/20225380/206890411-e459915a-d1d8-4a55-adfa-97d1baba77a1.jpg)
